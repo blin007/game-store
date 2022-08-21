@@ -6,7 +6,7 @@
     align-items: center;
     background-color:rgb(14, 14, 19);
     top: 0;
-    z-index: 100;
+    z-index: 300;
     position: sticky;
 }
 
