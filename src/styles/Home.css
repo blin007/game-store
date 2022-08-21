@@ -18,7 +18,8 @@
 .home_navbar {
     display: block;
     position:relative;
-    width: 900px;
+    width: 50%;
+    max-width: 900px;
     padding: 0 16px;
     margin: 0 auto;
     z-index: 100;
@@ -77,6 +78,15 @@
     /* position: relative; */
     /* top: 50px; */
     /* margin-bottom: -150px; */
-    /* width: 100%; */
+    width: 100%;
     /* z-index: -1; */
 }
+
+@media screen and (max-width: 900px) {
+    .home_navarea .home_navContent {
+        display: block;
+        height: auto;
+        margin: 0;
+    }
+}
+    

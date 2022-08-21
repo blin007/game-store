@@ -92,3 +92,11 @@
     font-weight: 800;
     /* color: black; */
 }
+
+@media screen and (max-width: 900px) {
+    .header {
+        display: block;
+        height: auto;
+        margin: 0;
+    }
+}
