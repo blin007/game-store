@@ -1,10 +1,14 @@
 .card {
     display: flex;
+    box-shadow: 0 0 7px 0px #000;
+    margin-top: 10px;
+    background-color: rgba(1, 7, 27, 0.695);
+    background: linear-gradient(to top, rgba(1, 7, 27, 0.671), #2a475e);
 }
 
 .slide_info {
     display: block;
-    width: 230px;
+    width: 234px;
     color: white;
     flex-shrink: 1;
 }
