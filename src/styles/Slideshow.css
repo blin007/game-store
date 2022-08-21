@@ -1,0 +1,44 @@
+.slideshow_container {
+    display: flex;
+    box-shadow: 0 0 7px 0px #000;
+    /* height: 400px; */
+    /* width: 300px; */
+    margin-top: 10px;
+    background-color:rgba(1, 7, 27, 0.695);
+    background: linear-gradient(to top, rgba(1, 7, 27, 0.695), #2a475e);
+}
+
+.slideshow {
+    position: relative;
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* overflow: hidden; */
+    /* width: 60%; */
+}
+
+.slideshow_items {
+    display: flex;
+}
+
+button {
+    width: 32px;
+    height: 64px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.prev_button {
+    position: absolute;
+    left: -32px;
+    top: 140px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
+}
+
+.next_button {
+    position: absolute;
+    right: -32px;
+    top: 140px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
+}

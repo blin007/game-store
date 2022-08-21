@@ -1,18 +1,18 @@
 * {
     padding: 0;
     margin: 0;
-    
+}
+
+h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: normal;
 }
 
 .home {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* margin-left: auto;
-    margin-right: auto; */
     height: 100vh; 
-    background-color: #417a9b;
-    
+    background-color: #2a475e;
+    background: linear-gradient(to top, rgb(1, 7, 27), #2a475e 20%);
 }
 
 .home_navbar {
@@ -42,6 +42,7 @@
 
 .home_navContent {
     display: flex;
+    justify-content: center;
 }
 
 .home_navContent .tab {
@@ -75,11 +76,23 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /* position: relative; */
-    /* top: 50px; */
-    /* margin-bottom: -150px; */
     width: 100%;
-    /* z-index: -1; */
+}
+
+.home_content_container {
+    padding: 20px 0 20px 0;
+}
+
+.home_content {
+    position: relative;
+    width: 850px;
+    margin: 0 auto;
+}
+
+.content_title {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
 }
 
 @media screen and (max-width: 900px) {

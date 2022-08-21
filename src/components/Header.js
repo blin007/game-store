@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 function Header() {
   return (
     <div className="header">
-        <motion.div className="header_logo" whileHover={{ scale: 1.05, cursor: 'pointer' }}>
+        <motion.div className="header_logo" whileHover={{ scale: 1.05, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)" }}>
             <SportsEsportsIcon 
                 className="header_logo_icon"
                 fontSize='large' 
@@ -20,16 +20,30 @@ function Header() {
 
         <div className="header_navbar">
             <div className="nav_option">
-                <motion.span className="nav_optionOne" whileHover={{ scale: 1.1, cursor: 'pointer'}}>Welcome Guest</motion.span>
-                <motion.span className="nav_optionTwo" whileHover={{ scale: 1.1, cursor: 'pointer'}}>Login</motion.span>
+                <motion.span 
+                    className="nav_optionOne" 
+                    whileHover={{ scale: 1.1, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)"}}
+                >
+                    Welcome Guest
+                </motion.span>
+                <motion.span 
+                    className="nav_optionTwo" 
+                    whileHover={{ scale: 1.1, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)"}}
+                >
+                    Login
+                </motion.span>
             </div>
 
             <div className="nav_option">
-                <motion.span className="nav_optionOne" whileHover={{ scale: 1.1, cursor: 'pointer'}}>Your Orders</motion.span>
-                <motion.span className="nav_optionTwo" whileHover={{ scale: 1.1, cursor: 'pointer'}}>Wishlist</motion.span>               
+                <motion.span className="nav_optionOne" whileHover={{ scale: 1.1, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)"}}>
+                    Your Orders
+                </motion.span>
+                <motion.span className="nav_optionTwo" whileHover={{ scale: 1.1, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)"}}>
+                    Wishlist
+                </motion.span>               
             </div>
 
-            <motion.div className="nav_cart" whileHover={{ scale: 1.1, cursor: 'pointer'}}>
+            <motion.div className="nav_cart" whileHover={{ scale: 1.1, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)"}}>
                 <ShoppingCartIcon />
                 <span className="nav_optionTwo">Cart</span>
                 <span className="nav_optionTwo nav_cartCount">0</span>

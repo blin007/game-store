@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../styles/Home.css'
 import HomeNavbar from './components/HomeNavbar'
+import Slideshow from './components/Slideshow'
+
 
 function Home() {
   return (
@@ -13,6 +15,12 @@ function Home() {
             alt=""
         />
         
+        <div className="home_content_container">
+          <div className="home_content">
+            <h3 className="content_title">FEATURED</h3>
+            <Slideshow />
+          </div>
+        </div>
     </div>
   )
 }
