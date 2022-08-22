@@ -6,6 +6,21 @@
     background: linear-gradient(to top, rgba(1, 7, 27, 0.671), #2a475e);
 }
 
+.add_cart {
+    position: absolute;
+    background: none;
+    top: 10px;
+    right: 8px;
+    height: 40px;
+    width: 40px;
+    border-radius: 32px;
+    visibility: hidden;
+}
+
+.card:hover .add_cart {
+    visibility: visible;
+}
+
 .slide_info {
     display: block;
     width: 234px;

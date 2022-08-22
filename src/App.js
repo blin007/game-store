@@ -1,13 +1,20 @@
 import './styles/App.css';
 import Header from './components/Header.js'
 import Home from './pages/Home/Home.js'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Home />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={[<Header />, <Home />]}/>
+          <Route path="/cart" element={[<Header />]}/>
+        </Routes>
+        
+        
+      </div>
+    </Router>
   );
 }
 
