@@ -1,7 +1,8 @@
 import React from 'react'
 import '../styles/GameCard.css'
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaWindows, FaApple, FaXbox, FaPlaystation} from 'react-icons/fa';
+import { FaWindows, FaApple, FaXbox, FaPlaystation } from 'react-icons/fa';
+import { TbDeviceNintendo } from 'react-icons/tb';
 
 const variants = {
     hidden: direction => {
@@ -47,7 +48,7 @@ const variants = {
     }
 }
 
-function GameCard({ image, title, price, windows, apple, xbox, playstation, direction }) {
+function GameCard({ image, title, price, windows, apple, xbox, playstation, direction, nintendo }) {
   return (
     <AnimatePresence initial={false} mode="wait" custom={direction}>
         <motion.div 
@@ -67,15 +68,16 @@ function GameCard({ image, title, price, windows, apple, xbox, playstation, dire
                 className="slide" 
             />
             <div id="slide_info" className="slide_info">
-                <span className="game_title">ELDEN RING</span>
+                <span className="game_title">{title}</span>
                 <span>Available Now!</span>
                 <span>Top Seller!</span>
-                <div className="game_price">$59.99</div>
+                <div className="game_price">{price}</div>
                 <div className="platforms">
                     {windows && (<FaWindows className="platform" />)}
                     {apple && (<FaApple className="platform"/>)}
                     {xbox && (<FaXbox className="platform"/>)}
                     {playstation && (<FaPlaystation className="platform"/>)}
+                    {nintendo && (<TbDeviceNintendo className="platform" />)}
                 </div>
             </div>   
 
