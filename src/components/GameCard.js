@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import '../styles/GameCard.css'
-import { AnimatePresence, motion } from 'framer-motion'
+//import icons
 import { FaWindows, FaApple, FaXbox, FaPlaystation } from 'react-icons/fa'
 import { TbDeviceNintendo } from 'react-icons/tb'
 import { BsCartPlus, BsCartCheck } from "react-icons/bs";
+
+import React, { useEffect, useState } from 'react'
+import '../styles/GameCard.css'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../features/cart/cartSlice'
 
 const variants = {
     hidden: direction => {
@@ -51,9 +55,11 @@ const variants = {
 
 function GameCard({ image, title, price, windows, apple, xbox, playstation, direction, nintendo }) {
     const [added, setAdded] = useState(false);
+    const dispatch = useDispatch()
 
-    const addToCart = (e) => {
+    const addCart = (e) => {
         setAdded(true);
+        dispatch(addToCart({title, price, image}))
     }
 
     useEffect(() => {
@@ -87,7 +93,7 @@ function GameCard({ image, title, price, windows, apple, xbox, playstation, dire
                         className="add_cart"
                         whileHover={{scale: 1.5, textShadow: "0px 0px 8px rgb(255,255,255)"}}
                         whileTap={{scale: 1}}
-                        onClick={addToCart}
+                        onClick={addCart}
                     > 
                         {!added && <BsCartPlus size={20}/> }
                         {added && <BsCartCheck size={20} />}

@@ -8,22 +8,22 @@ function HomeNavbar() {
             <div className="home_navbackground">
                 <div className="home_navContent">
                     <div className="tab">
-                        <span class="item">Featured</span>
+                        <span className="item">Featured</span>
                     </div>
                     <div className="tab">
-                        <span class="item">New Releases</span>
+                        <span className="item">New Releases</span>
                     </div>
                     <div className="tab">
-                        <span class="item">Bestselling</span>
+                        <span className="item">Bestselling</span>
                     </div>
                     <div className="tab">
-                        <span class="item">Genres</span>
+                        <span className="item">Genres</span>
                     </div>
                     <div className="tab">
-                        <span class="item">On Sale</span>
+                        <span className="item">On Sale</span>
                     </div>
                     <div className="tab">
-                        <span class="item">All Games</span>
+                        <span className="item">All Games</span>
                     </div>
                 </div>
             </div>

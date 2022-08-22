@@ -5,17 +5,22 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import SearchBar from './SearchBar'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux' 
 
 function Header() {
+    const cart = useSelector((state) => state.cart);
+
   return (
-    <div className="header">
-        <motion.div className="header_logo" whileHover={{ scale: 1.05, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)" }}>
-            <SportsEsportsIcon 
-                className="header_logo_icon"
-                fontSize='large' 
-            />
-            <h1 >GAME STORE</h1>
-        </motion.div>
+    <div className="header" >
+        <Link to="/" style={{ textDecoration: 'none' }}>
+            <motion.div className="header_logo" whileHover={{ scale: 1.05, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)" }}>
+                <SportsEsportsIcon 
+                    className="header_logo_icon"
+                    fontSize='large' 
+                />
+                <h1 >GAME STORE</h1>
+            </motion.div>
+        </Link>
 
         <SearchBar />
 
@@ -48,7 +53,7 @@ function Header() {
                 <motion.div className="nav_cart" whileHover={{ scale: 1.1, cursor: 'pointer', textShadow: "0px 0px 8px rgb(255,255,255)"}}>
                     <ShoppingCartIcon />
                     <span className="nav_optionTwo">Cart</span>
-                    <span className="nav_optionTwo nav_cartCount">0</span>
+                    <span className="nav_optionTwo nav_cartCount">{cart?.length}</span>
                 </motion.div>
             </Link>
         </div>
