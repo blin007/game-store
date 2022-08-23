@@ -1,0 +1,66 @@
+.login {
+    background-image: url('https://store.cloudflare.steamstatic.com/public/shared/images/joinsteam/acct_creation_bg.jpg');
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login_container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    width: 400px;
+    height: fit-content;
+}
+
+.login_container > .login_title {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.login_form {
+    display: flex;
+    width: 300px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login_form > h5 {
+    align-self: start;
+    margin-bottom: 7px;
+}
+
+.login_form > .text_field {
+    width: 100%;
+    max-width: 300px;
+    background: #32353c;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    padding: 8px 6px;
+    color: #fff;
+}
+
+.login_form > .login_button {
+    margin-top: 5px;
+    background: linear-gradient(to right, #06a8ff 10%, #0e319a 60%);
+    border-radius: 3px;
+    min-width: fit-content;
+    width: 100%;
+    max-width: 200px;
+    max-height: 40px;
+    min-height: fit-content;
+}
+
+.register_button {
+    margin-top: 40px;
+    background: linear-gradient(to left, #3be693 10%, #039869 60%);
+    border-radius: 3px;
+    min-width: fit-content;
+    width: 50%;
+    max-width: 150px;
+    max-height: 40px;
+    min-height: fit-content;
+}

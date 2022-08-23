@@ -41,7 +41,6 @@
 }
 
 .header_search > input {
-    /* margin-left: 10px; */
     padding-left: 15px;
     height: 30px;
     border-radius: 10px;
@@ -98,7 +97,6 @@
     margin-right: 5px;
     font-size: 14px;
     font-weight: 800;
-    /* color: black; */
 }
 
 @media screen and (max-width: 900px) {

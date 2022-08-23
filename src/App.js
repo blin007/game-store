@@ -5,6 +5,15 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Cart from './pages/Cart/Cart';
 import Login from './pages/Login/Login';
 
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    boxShadow: "0 0 20px 0px rgb(1, 7, 27)"
+  },
+  tap: {
+    scale: 0.9
+  }
+}
 
 function App() {
   return (
@@ -12,8 +21,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={[<Header />, <Home />]}/>
-          <Route path="/cart" element={[<Header />, <Cart />]}/>
-          <Route path="/login" element={[<Header />, <Login />]} />
+          <Route path="/cart" element={[<Header />, <Cart buttonVariants={buttonVariants}/>]}/>
+          <Route path="/login" element={[<Header />, <Login buttonVariants={buttonVariants}/>]} />
         </Routes>
         
         
