@@ -1,0 +1,25 @@
+.total {
+    width: 400px;
+    height: 100px;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #1b28388d;
+    color: white;
+}
+
+.total > p {
+    margin-left: 32px;
+}
+
+.total button {
+    display: inline-block;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    min-width: fit-content;
+    width: 150px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 32px;
+    background: linear-gradient(to bottom, rgb(5, 123, 153) 5%, rgb(4, 55, 105) 95%);
+}

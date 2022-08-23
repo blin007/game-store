@@ -1,5 +1,7 @@
 import React from 'react'
+import '../../styles/Cart.css'
 import { useSelector } from 'react-redux';
+import EstimatedTotal from '../../components/EstimatedTotal';
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
@@ -13,8 +15,18 @@ function Cart() {
   ))
   return (
     <div className="cart">
-      <h2>Cart Items</h2>
-      {cartItems}
+      <h2 className="cart_title">YOUR SHOPPING CART</h2>
+      <div className="cart_container">
+        
+        <div className="cart_left">
+          <h2>Items</h2>
+          {/* Cart Items */}
+        </div>
+        <div className="cart_right">
+          <EstimatedTotal />
+          {/* <h2>Estimated Total ({cart?.length} items): </h2> */}
+        </div>
+      </div>
     </div>
   )
 }
