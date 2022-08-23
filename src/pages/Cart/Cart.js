@@ -7,6 +7,16 @@ import { useNavigate } from 'react-router-dom';
 import { clearCart } from '../../features/cart/cartSlice';
 import { motion } from 'framer-motion';
 
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    boxShadow: "0 0 20px 0px rgb(1, 7, 27)"
+  },
+  tap: {
+    scale: 0.9
+  }
+}
+
 function Cart() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -24,16 +34,17 @@ function Cart() {
         <div className="cart_left">
           <div className="cart_items">
             {cart.map((item, i) => (
-              <CartItem cartItem={item} />
+              <CartItem cartItem={item} buttonVariants={buttonVariants}/>
             ))}
 
             <div className="button_container">
               {cart?.length > 0 && (
                 <motion.button 
+                  variants={buttonVariants}
                   className="continue_button" 
                   onClick={() => navigate('/')}
-                  whileHover = {{scale: 1.1,}}
-                  whileTap={{scale: 0.9}}
+                  whileHover = "hover"
+                  whileTap="tap"
                 >
                   Continue Shopping
                 </motion.button>
@@ -53,7 +64,7 @@ function Cart() {
 
         </div>
         <div className="cart_right">
-          <EstimatedTotal cart={cart}/>
+          <EstimatedTotal cart={cart} buttonVariants={buttonVariants}/>
         </div>
       </div>
     </div>

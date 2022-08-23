@@ -4,7 +4,7 @@ import { delFromCart } from '../features/cart/cartSlice';
 import '../styles/CartItem.css'
 import { motion } from 'framer-motion'
 
-function CartItem({ cartItem }) {
+function CartItem({ cartItem, buttonVariants }) {
     const dispatch = useDispatch();
 
     const removeFromCart = () => {
@@ -29,8 +29,9 @@ function CartItem({ cartItem }) {
         <div className="remove_button_container">
             <motion.button 
                 onClick={removeFromCart}
-                whileTap={{scale: 0.9}}
-                whileHover={{scale: 1.1}}
+                variants={buttonVariants}
+                whileTap="tap"
+                whileHover="hover"
             >
                 Remove from Cart
             </motion.button>

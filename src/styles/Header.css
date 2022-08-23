@@ -10,6 +10,14 @@
     position: sticky;
 }
 
+.header a {
+    color: #fff;
+}
+
+.nav_link {
+    text-decoration: none;
+}
+
 .header_logo_icon {
     margin-right: 5px;
 }

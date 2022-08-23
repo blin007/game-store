@@ -4,7 +4,7 @@ import CurrencyFormat from 'react-currency-format'
 import { motion } from 'framer-motion';
 import { cartTotal } from '../features/cart/cartSlice';
 
-function EstimatedTotal({ cart }) {
+function EstimatedTotal({ cart, buttonVariants }) {
 
   return (
     <div className="total">
@@ -24,12 +24,19 @@ function EstimatedTotal({ cart }) {
         />
 
         <div className="cart_buttons">
-            <motion.button whileHover={{ scale: 1.1, boxShadow: "0 0 20px 0px rgb(1, 7, 27)"}}
-                onClick={() => console.log(cart)}
+            <motion.button 
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                // onClick={() => console.log(cart)}
             >
                 Purchase for myself
             </motion.button>
-            <motion.button whileHover={{ scale: 1.1, boxShadow: "0 0 20px 0px rgb(1, 7, 27)"}}>
+            <motion.button 
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+            >
                 Purchase as a gift
             </motion.button>
         </div>
