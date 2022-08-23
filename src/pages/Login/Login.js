@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../styles/Login.css'
 import { motion } from 'framer-motion'
+import { auth } from '../../db/firebase';
 
 //anim variants for the text fields
 const textFieldVariants = {
@@ -19,6 +20,11 @@ function Login({ buttonVariants }) {
     const signIn = e => {
         e.preventDefault();
     }
+
+    const register = e => {
+        e.preventDefault();
+    }
+
   return (
     <div className="login">
         <div className="login_container">
@@ -62,7 +68,7 @@ function Login({ buttonVariants }) {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                
+                onClick={register}
             >
                 Create Account
             </motion.button>
