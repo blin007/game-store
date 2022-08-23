@@ -1,30 +1,59 @@
 import React from 'react'
 import '../../styles/Cart.css'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import EstimatedTotal from '../../components/EstimatedTotal';
+import CartItem from '../../components/CartItem';
+import { useNavigate } from 'react-router-dom';
+import { clearCart } from '../../features/cart/cartSlice';
+import { motion } from 'framer-motion';
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const cartItems = cart.map(item => (
-    <div key={item.id}>
-      <p>{item.title}</p>
-      <p>{item.price}</p>
-      <img src={item.image} alt={item.title} />
-    </div>
-  ))
+  const removeAllItems = () => {
+    dispatch(clearCart())
+  }
+
   return (
     <div className="cart">
       <h2 className="cart_title">YOUR SHOPPING CART</h2>
       <div className="cart_container">
         
         <div className="cart_left">
-          <h2>Items</h2>
-          {/* Cart Items */}
+          <div className="cart_items">
+            {cart.map((item, i) => (
+              <CartItem cartItem={item} />
+            ))}
+
+            <div className="button_container">
+              {cart?.length > 0 && (
+                <motion.button 
+                  className="continue_button" 
+                  onClick={() => navigate('/')}
+                  whileHover = {{scale: 1.1,}}
+                  whileTap={{scale: 0.9}}
+                >
+                  Continue Shopping
+                </motion.button>
+              )}
+              {cart?.length > 0 && (
+                <motion.button 
+                  className="remove_all_button" 
+                  onClick={removeAllItems}
+                  initial={{textDecoration: "underline", color: "rgb(255,255,255)"}}
+                  whileHover={{ textDecoration: "none", color:"rgb(209, 53, 42)"}}
+                >
+                  Remove All Items
+                </motion.button>
+              )}
+            </div>
+          </div>
+
         </div>
         <div className="cart_right">
-          <EstimatedTotal />
-          {/* <h2>Estimated Total ({cart?.length} items): </h2> */}
+          <EstimatedTotal cart={cart}/>
         </div>
       </div>
     </div>

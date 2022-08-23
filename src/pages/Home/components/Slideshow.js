@@ -6,7 +6,46 @@ import GameCard from '../../../components/GameCard';
 import images from '../../../db/dummyData';
 import { motion } from 'framer-motion';
 
-
+const variants = {
+    hidden: direction => {
+        return { 
+            x: direction > 0 ? 100 : -100,
+            opacity: 0,
+        }
+    },
+    visible: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            x: {
+                type: 'spring',
+                stiffness: 300,
+                damping: 30,
+                duration: 0.01
+            },
+            opacity: {
+                duration: .1,
+            }
+        }
+    },
+    exit: direction => {
+        return {
+            x: direction > 0 ? -100 : 100,
+            opacity: 0,
+            transition: {
+                x: {
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 30,
+                    duration: 0.01,
+                },
+                opacity: {
+                    duration: .2,
+                }
+            }
+        }
+    }
+}
 
 
 function Slideshow() {
@@ -33,6 +72,8 @@ function Slideshow() {
         <div className="slideshow">
             <div className="slideshow_items">
                 <GameCard 
+                    animVariants = {variants}
+                    id = {images[index].id}
                     image={images[index].url} 
                     title= {images[index].title}
                     price= {images[index].price}

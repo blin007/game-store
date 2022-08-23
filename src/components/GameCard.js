@@ -9,57 +9,14 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../features/cart/cartSlice'
 
-const variants = {
-    hidden: direction => {
-        return { 
-            x: direction > 0 ? 100 : -100,
-            opacity: 0,
-            // scale: 0.5,
-        }
-    },
-    visible: {
-        x: 0,
-        opacity: 1,
-        // scale: 1,
-        transition: {
-            x: {
-                type: 'spring',
-                stiffness: 300,
-                damping: 30,
-                duration: 0.01
-            },
-            opacity: {
-                duration: .1,
-            }
-        }
-    },
-    exit: direction => {
-        return {
-            x: direction > 0 ? -100 : 100,
-            opacity: 0,
-            // scale: 0.5,
-            transition: {
-                x: {
-                    type: 'spring',
-                    stiffness: 300,
-                    damping: 30,
-                    duration: 0.01,
-                },
-                opacity: {
-                    duration: .2,
-                }
-            }
-        }
-    }
-}
 
-function GameCard({ image, title, price, windows, apple, xbox, playstation, direction, nintendo }) {
+function GameCard({ animVariants, id, image, title, price, windows, apple, xbox, playstation, direction, nintendo }) {
     const [added, setAdded] = useState(false);
     const dispatch = useDispatch()
 
-    const addCart = (e) => {
+    const addCart = () => {
         setAdded(true);
-        dispatch(addToCart({title, price, image}))
+        dispatch(addToCart({id, title, price, image}))
     }
 
     useEffect(() => {
@@ -73,10 +30,10 @@ function GameCard({ image, title, price, windows, apple, xbox, playstation, dire
             <motion.div 
                 className="card"
                 whileHover={{cursor: 'pointer', boxShadow: "0 0 20px 0px rgb(1, 7, 27)"}}    
-                variants={variants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
+                variants={animVariants}
+                initial= {animVariants.hidden}
+                animate= {animVariants.visible}
+                exit= {animVariants.exit}
                 key={image}
                 custom={direction}
             >
