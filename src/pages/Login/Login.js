@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../../styles/Login.css'
 import { motion } from 'framer-motion'
 import { auth } from '../../db/firebase';
+import { useNavigate } from 'react-router-dom'
 
 //anim variants for the text fields
 const textFieldVariants = {
@@ -16,13 +17,22 @@ const textFieldVariants = {
 function Login({ buttonVariants }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const signIn = e => {
         e.preventDefault();
+
+        auth.signInWithEmailAndPassword(email, password).then((auth) => {
+            navigate('/')
+        }).catch(error => alert.message)
     }
 
     const register = e => {
         e.preventDefault();
+
+        auth.createUserWithEmailAndPassword(email, password).then((auth) => {
+            navigate('/')
+        }).catch(error => alert(error.message));
     }
 
   return (

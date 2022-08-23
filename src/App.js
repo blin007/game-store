@@ -4,6 +4,8 @@ import Home from './pages/Home/Home.js'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Cart from './pages/Cart/Cart';
 import Login from './pages/Login/Login';
+import { useEffect } from 'react';
+import { auth } from './db/firebase';
 
 const buttonVariants = {
   hover: {
@@ -16,6 +18,22 @@ const buttonVariants = {
 }
 
 function App() {
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      console.log("User: ", authUser);
+
+      //user logs in
+      if (authUser){
+
+      }
+      //user logs out
+      else {
+        
+      }
+    })
+  }, [])
+
   return (
     <Router>
       <div className="App">
