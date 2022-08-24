@@ -60,7 +60,7 @@ function App() {
             element={[
               <Header />, 
               <Elements stripe={stripePromise}>
-                <Checkout />
+                <Checkout buttonVariants={buttonVariants}/>
               </Elements>]} 
           />
         </Routes>
