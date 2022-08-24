@@ -1,0 +1,29 @@
+.purchase {
+    padding: 10px 40px 40px 40px;
+    margin: 20px 0;
+    /* border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray; */
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.2);
+    position: relative;
+    color: #fff;
+}
+
+.purchase_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.purchase_items {
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.purchase_total {
+    text-align: center;
+    font-weight: 600;
+}

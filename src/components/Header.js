@@ -65,13 +65,15 @@ function Header() {
             </div>
 
             <div className="nav_option">
-                <motion.span 
-                    className="nav_optionOne" 
-                    variants={headerVariants}
-                    whileHover="hover"
-                >
-                    Your Orders
-                </motion.span>
+                <Link to="/purchases" className="nav_link">
+                    <motion.span 
+                        className="nav_optionOne" 
+                        variants={headerVariants}
+                        whileHover="hover"
+                    >
+                        Your Orders
+                    </motion.span>
+                </Link>
                 <motion.span 
                     className="nav_optionTwo" 
                     variants={headerVariants}

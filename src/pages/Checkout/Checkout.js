@@ -1,28 +1,67 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import '../../styles/Checkout.css'
 import CartItem from '../Cart/components/CartItem'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import CurrencyFormat from 'react-currency-format'
-import { cartTotal } from '../../features/cart/cartSlice'
+import { cartTotal, clearCart } from '../../features/cart/cartSlice'
 import { motion } from 'framer-motion'
+import axios from '../../axios'
+import { useNavigate } from 'react-router-dom'
+import { db } from '../../db/firebase'
 
 function Checkout({ buttonVariants }) {
     const cart = useSelector((state) => state.cart)
     const user = useSelector((state) => state.user)
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
     const [processing, setProcessing] = useState("")
     const [successful, setSuccessful] = useState(false)
     const [error, setError] = useState(null)
     const [disabled, setDisabled] = useState(true)
+    const [clientSecret, setClientSecret] = useState(true);
 
     const stripe = useStripe();
     const elements = useElements();
+
+    useEffect(() => {
+        const getClientSecret = async () => {
+            const response = await axios({
+                method: 'post',
+                url: `/checkout/create?total=${cartTotal(cart) * 100}` //must be in currency subunit
+            })
+            setClientSecret(response.data.clientSecret)
+        }
+
+        getClientSecret();
+    }, [cart])
+
+    console.log('THE SECRET IS: ', clientSecret);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setProcessing(true);
 
+        const payload = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: elements.getElement(CardElement)
+            }
+        }).then(({ paymentIntent }) => {
+            //payment has succeeded so add the purchase to the firebase store db
+            db.collection('users').doc(user?.uid).collection('purchases').doc(paymentIntent.id).set({
+                cart: cart,
+                amount: paymentIntent.amount,
+                created: paymentIntent.created,
+            })
 
+            setSuccessful(true);
+            setError(null);
+            setProcessing(false);
+
+            dispatch(clearCart());
+
+            navigate('/purchases', { replace: true })
+        })
     }
 
     const handleChange = (e) => {
@@ -38,7 +77,7 @@ function Checkout({ buttonVariants }) {
                 
                 <div className="checkout_items">
                     {cart.map(item => (
-                        <CartItem cartItem={item} />
+                        <CartItem cartItem={item} buttonVariants={buttonVariants} removeButtons={true} />
                     ))}
                 </div>
 
@@ -51,7 +90,13 @@ function Checkout({ buttonVariants }) {
                     <div className="payment_details">
                         <p>{user.email ? user.email : "Guest"}</p>
                         <form onSubmit={handleSubmit}>
-                            <CardElement onChange={e => handleChange(e)}/>
+                            <CardElement onChange={e => handleChange(e)} options={{
+                                style: {
+                                    base: {
+                                        color: '#FFF'
+                                    }
+                                }
+                            }}/>
                             <motion.button 
                                 type="submit"
                                 disabled={processing || disabled || successful}

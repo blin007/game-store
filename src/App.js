@@ -1,16 +1,20 @@
-import './styles/App.css';
-import Header from './components/Header.js'
-import Home from './pages/Home/Home.js'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Cart from './pages/Cart/Cart';
-import Login from './pages/Login/Login';
+//import libraries
 import { useEffect } from 'react';
-import { auth } from './db/firebase';
-import { useDispatch } from 'react-redux';
-import { setUser } from './features/user/userSlice';
-import Checkout from './pages/Checkout/Checkout';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements} from '@stripe/react-stripe-js';
+import { useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+import { auth } from './db/firebase';
+import { setUser } from './features/user/userSlice';
+
+//import pages
+import Header from './components/Header.js'
+import Home from './pages/Home/Home.js'
+import Purchases from './pages/Purchases/Purchases';
+import Cart from './pages/Cart/Cart';
+import Login from './pages/Login/Login';
+import Checkout from './pages/Checkout/Checkout';
 
 const stripePromise = loadStripe('pk_test_51LYX9LCBkSPfxTAlVxKX4qCiThnCH3rjhDx9vg47PmGJfzOk0nTveHNC0gppAi28LJTcoTdqNXUGAg50G0RXADK300MRqmODYc');
 
@@ -63,6 +67,7 @@ function App() {
                 <Checkout buttonVariants={buttonVariants}/>
               </Elements>]} 
           />
+          <Route path="/purchases" element={[<Header />, <Purchases />]} />
         </Routes>
         
         

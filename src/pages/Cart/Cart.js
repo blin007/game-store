@@ -24,7 +24,7 @@ function Cart({ buttonVariants }) {
         <div className="cart_left">
           <div className="cart_items">
             {cart.map((item, i) => (
-              <CartItem cartItem={item} buttonVariants={buttonVariants}/>
+              <CartItem cartItem={item} buttonVariants={buttonVariants} removeButtons={true}/>
             ))}
 
             <div className="button_container">

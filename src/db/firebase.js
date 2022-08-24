@@ -15,7 +15,7 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
+const db = firebaseApp.firestore(); //db will store purchases made by each user
+const auth = firebase.auth(); //authentication
 
 export { db, auth };

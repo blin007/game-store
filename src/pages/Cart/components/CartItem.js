@@ -4,7 +4,7 @@ import { delFromCart } from '../../../features/cart/cartSlice';
 import '../../../styles/CartItem.css'
 import { motion } from 'framer-motion'
 
-function CartItem({ cartItem, buttonVariants }) {
+function CartItem({ cartItem, buttonVariants, removeButtons }) {
     const dispatch = useDispatch();
 
     const removeFromCart = () => {
@@ -12,7 +12,7 @@ function CartItem({ cartItem, buttonVariants }) {
     }
 
   return (
-    <div className="cart_item">
+    <motion.div className="cart_item" variants={buttonVariants} whileHover="hover">
         <img 
             src={cartItem.image}
             alt={cartItem.title}
@@ -26,18 +26,21 @@ function CartItem({ cartItem, buttonVariants }) {
             </p>
             
         </div>
-        <div className="remove_button_container">
-            <motion.button 
-                onClick={removeFromCart}
-                variants={buttonVariants}
-                whileTap="tap"
-                whileHover="hover"
-            >
-                Remove from Cart
-            </motion.button>
-        </div>
+        {removeButtons && (
+            <div className="remove_button_container">
+                <motion.button 
+                    onClick={removeFromCart}
+                    variants={buttonVariants}
+                    whileTap="tap"
+                    whileHover="hover"
+                >
+                    Remove from Cart
+                </motion.button>
+            </div>
+        )}
+
         
-    </div>
+    </motion.div>
   )
 }
 

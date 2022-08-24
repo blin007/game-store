@@ -1,0 +1,24 @@
+.purchases {
+    height: 100vh;
+    padding: 20px 80px;
+    background: radial-gradient(at top, rgb(44, 57, 100) 40%, #07263f);
+}
+
+.purchase_title {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 80%;
+    color: white;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    background: radial-gradient(at bottom, #07263f, rgba(63, 77, 123, 0) 30%);
+    border-bottom: 1px solid rgb(47, 54, 112);
+}
+
+.purchases_container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
