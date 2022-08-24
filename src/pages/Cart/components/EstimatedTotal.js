@@ -1,12 +1,14 @@
 import React from 'react'
-import '../styles/EstimatedTotal.css'
+import '../../../styles/EstimatedTotal.css'
 import CurrencyFormat from 'react-currency-format'
 import { motion } from 'framer-motion';
-import { cartTotal } from '../features/cart/cartSlice';
-import { useSelector } from 'react-redux'
+import { cartTotal } from '../../../features/cart/cartSlice'
+// import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function EstimatedTotal({ cart, buttonVariants }) {
-    const user = useSelector((state) => state.user);
+    // const user = useSelector((state) => state.user);
+    const navigate = useNavigate();
 
   return (
     <div className="total">
@@ -30,7 +32,7 @@ function EstimatedTotal({ cart, buttonVariants }) {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                onClick={() => console.log(user)}
+                onClick={() => navigate('/checkout')}
             >
                 Purchase for myself
             </motion.button>
@@ -38,6 +40,7 @@ function EstimatedTotal({ cart, buttonVariants }) {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
+                onClick={() => navigate('/checkout')}
             >
                 Purchase as a gift
             </motion.button>

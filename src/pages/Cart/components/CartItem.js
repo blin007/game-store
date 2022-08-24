@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { delFromCart } from '../features/cart/cartSlice';
-import '../styles/CartItem.css'
+import { delFromCart } from '../../../features/cart/cartSlice';
+import '../../../styles/CartItem.css'
 import { motion } from 'framer-motion'
 
 function CartItem({ cartItem, buttonVariants }) {

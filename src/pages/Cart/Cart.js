@@ -1,8 +1,8 @@
 import React from 'react'
 import '../../styles/Cart.css'
 import { useDispatch, useSelector } from 'react-redux';
-import EstimatedTotal from '../../components/EstimatedTotal';
-import CartItem from '../../components/CartItem';
+import EstimatedTotal from './components/EstimatedTotal';
+import CartItem from './components/CartItem';
 import { useNavigate } from 'react-router-dom';
 import { clearCart } from '../../features/cart/cartSlice';
 import { motion } from 'framer-motion';

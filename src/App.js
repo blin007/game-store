@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { auth } from './db/firebase';
 import { useDispatch } from 'react-redux';
 import { setUser } from './features/user/userSlice';
+import Checkout from './pages/Checkout/Checkout';
 
 const buttonVariants = {
   hover: {
@@ -51,6 +52,7 @@ function App() {
           <Route path="/" element={[<Header />, <Home />]}/>
           <Route path="/cart" element={[<Header />, <Cart buttonVariants={buttonVariants}/>]}/>
           <Route path="/login" element={[<Header />, <Login buttonVariants={buttonVariants}/>]} />
+          <Route path="/checkout" element={[<Header />, <Checkout />]} />
         </Routes>
         
         

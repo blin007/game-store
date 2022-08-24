@@ -1,0 +1,32 @@
+.checkout {
+    background: radial-gradient(at top, rgb(63, 77, 123) 5%, #07263f);
+    height: 100vh;
+}
+
+.checkout_container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.checkout_content_left {
+    display: block;
+    float: left;
+    width: 600px;
+    /* border: 1px solid; */
+    /* height: 900px; */
+}
+
+.checkout_content_right {
+    float: right;
+    width: 300px;
+    /* border: 1px solid; */
+    /* height: 300px; */
+    margin-right: 80px;
+}
+
+.checkout_section {
+    display: flex;
+    padding: 20px;
+    /* margin: 0 20px; */
+    /* border: 1px solid; */
+}
