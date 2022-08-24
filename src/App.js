@@ -9,6 +9,10 @@ import { auth } from './db/firebase';
 import { useDispatch } from 'react-redux';
 import { setUser } from './features/user/userSlice';
 import Checkout from './pages/Checkout/Checkout';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements} from '@stripe/react-stripe-js';
+
+const stripePromise = loadStripe('pk_test_51LYX9LCBkSPfxTAlVxKX4qCiThnCH3rjhDx9vg47PmGJfzOk0nTveHNC0gppAi28LJTcoTdqNXUGAg50G0RXADK300MRqmODYc');
 
 const buttonVariants = {
   hover: {
@@ -52,7 +56,13 @@ function App() {
           <Route path="/" element={[<Header />, <Home />]}/>
           <Route path="/cart" element={[<Header />, <Cart buttonVariants={buttonVariants}/>]}/>
           <Route path="/login" element={[<Header />, <Login buttonVariants={buttonVariants}/>]} />
-          <Route path="/checkout" element={[<Header />, <Checkout />]} />
+          <Route path="/checkout" 
+            element={[
+              <Header />, 
+              <Elements stripe={stripePromise}>
+                <Checkout />
+              </Elements>]} 
+          />
         </Routes>
         
         
