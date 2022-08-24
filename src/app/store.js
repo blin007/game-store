@@ -7,8 +7,8 @@ export const store = configureStore({
         cart: cartReducer,
         user: userReducer,
     },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: false
-        })
+    // middleware: (getDefaultMiddleware) =>
+    //     getDefaultMiddleware({
+    //         serializableCheck: false
+    //     })
 })

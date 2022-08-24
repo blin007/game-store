@@ -21,7 +21,8 @@ function Header() {
     const user = useSelector((state) => state.user);
 
     const handleAuthentication = () => {
-        if (user.user) {
+        console.log(user)
+        if (user) {
             auth.signOut();
         }
     }
@@ -48,17 +49,17 @@ function Header() {
             <div className="nav_option">
                 <span className="nav_optionOne" >
                     {/* Display user name in header if signed in, otherwise display "guest" */}
-                    Welcome {user.user ? user?.user?.email.split('@')[0] : "Guest"}
+                    Welcome {user.email ? user?.email.split('@')[0] : "Guest"}
                 </span>
                 {/* Only go to login page if not signed in */}
-                <Link to={!user.user && "/login"} className='nav_link'>
+                <Link to={!user.email && "/login"} className='nav_link'>
                     <motion.div 
                         className="nav_optionTwo"
                         variants={headerVariants} 
                         whileHover="hover"
                         onClick={handleAuthentication}
                     >
-                        <span>{user.user ? "Log out" : "Login"}</span>
+                        <span>{user.email ? "Log out" : "Login"}</span>
                     </motion.div>
                 </Link>
             </div>

@@ -24,15 +24,21 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log("User: ", authUser);
+      // console.log("User: ", authUser.email);
 
       //user logs in
       if (authUser){
-        dispatch(setUser(authUser))
+        dispatch(setUser({
+          email: authUser.email,
+          uid: authUser.uid,
+        }))
       }
       //user logs out
       else {
-        dispatch(setUser(null))
+        dispatch(setUser({
+          email: null,
+          uid: null,
+        }))
       }
     })
     //eslint-disable-next-line

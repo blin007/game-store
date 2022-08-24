@@ -31,6 +31,7 @@ function Login({ buttonVariants }) {
         e.preventDefault();
 
         auth.createUserWithEmailAndPassword(email, password).then((auth) => {
+            console.log('auth: ', auth);
             navigate('/')
         }).catch(error => alert(error.message));
     }
