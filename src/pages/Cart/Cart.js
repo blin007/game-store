@@ -7,16 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import { clearCart } from '../../features/cart/cartSlice';
 import { motion } from 'framer-motion';
 
-// const buttonVariants = {
-//   hover: {
-//     scale: 1.1,
-//     boxShadow: "0 0 20px 0px rgb(1, 7, 27)"
-//   },
-//   tap: {
-//     scale: 0.9
-//   }
-// }
-
 function Cart({ buttonVariants }) {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();

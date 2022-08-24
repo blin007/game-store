@@ -6,6 +6,7 @@ import SearchBar from './SearchBar'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux' 
+import { auth } from '../db/firebase'
 
 const headerVariants = {
     hover: {
@@ -17,6 +18,13 @@ const headerVariants = {
 
 function Header() {
     const cart = useSelector((state) => state.cart);
+    const user = useSelector((state) => state.user);
+
+    const handleAuthentication = () => {
+        if (user.user) {
+            auth.signOut();
+        }
+    }
 
   return (
     <div className="header" >
@@ -38,18 +46,19 @@ function Header() {
 
         <div className="header_navbar">
             <div className="nav_option">
-                <span 
-                    className="nav_optionOne" 
-                >
-                    Welcome Guest
+                <span className="nav_optionOne" >
+                    {/* Display user name in header if signed in, otherwise display "guest" */}
+                    Welcome {user.user ? user?.user?.email.split('@')[0] : "Guest"}
                 </span>
-                <Link to="/login" className='nav_link'>
+                {/* Only go to login page if not signed in */}
+                <Link to={!user.user && "/login"} className='nav_link'>
                     <motion.div 
                         className="nav_optionTwo"
                         variants={headerVariants} 
                         whileHover="hover"
+                        onClick={handleAuthentication}
                     >
-                        <span>Login</span>
+                        <span>{user.user ? "Log out" : "Login"}</span>
                     </motion.div>
                 </Link>
             </div>

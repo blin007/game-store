@@ -6,6 +6,8 @@ import Cart from './pages/Cart/Cart';
 import Login from './pages/Login/Login';
 import { useEffect } from 'react';
 import { auth } from './db/firebase';
+import { useDispatch } from 'react-redux';
+import { setUser } from './features/user/userSlice';
 
 const buttonVariants = {
   hover: {
@@ -18,6 +20,7 @@ const buttonVariants = {
 }
 
 function App() {
+  const dispatch = useDispatch();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -25,13 +28,14 @@ function App() {
 
       //user logs in
       if (authUser){
-
+        dispatch(setUser(authUser))
       }
       //user logs out
       else {
-        
+        dispatch(setUser(null))
       }
     })
+    //eslint-disable-next-line
   }, [])
 
   return (

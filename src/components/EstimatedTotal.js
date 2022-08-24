@@ -3,8 +3,10 @@ import '../styles/EstimatedTotal.css'
 import CurrencyFormat from 'react-currency-format'
 import { motion } from 'framer-motion';
 import { cartTotal } from '../features/cart/cartSlice';
+import { useSelector } from 'react-redux'
 
 function EstimatedTotal({ cart, buttonVariants }) {
+    const user = useSelector((state) => state.user);
 
   return (
     <div className="total">
@@ -28,7 +30,7 @@ function EstimatedTotal({ cart, buttonVariants }) {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                // onClick={() => console.log(cart)}
+                onClick={() => console.log(user)}
             >
                 Purchase for myself
             </motion.button>
