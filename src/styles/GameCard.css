@@ -1,10 +1,12 @@
+/* BELOW STYLES ARE FOR CARDS THAT APPEARED IN FEATURED SLIDE SHOW SECTION OF HOME PAGE */
+
 .card {
     display: flex;
     box-shadow: 0 0 7px 0px #000;
-    /* margin-top: 10px; */
+    margin-top: 10px;
     background-color: rgba(1, 7, 27, 0.695);
     background: linear-gradient(to top, rgba(1, 7, 27, 0.671), #2a475e);
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 .add_cart {
@@ -20,14 +22,6 @@
 
 .card:hover .add_cart {
     visibility: visible;
-}
-
-.game {
-    object-fit: cover;
-    max-width: 400px;
-    max-height: 300px;
-    width: auto;
-    height: auto;
 }
 
 .slide_info {
@@ -67,4 +61,50 @@
 
 .platform {
     padding-left: 5px;
+}
+
+/* BELOW STYLES ARE FOR THE GAME CARDS THAT APPEAR FROM SEARCHING */
+
+.search_card {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 7px 0px #000;
+    /* margin-top: 10px; */
+    background-color: rgba(1, 7, 27, 0.695);
+    background: linear-gradient(to top, rgba(1, 7, 27, 0.671), #2a475e);
+    margin: 20px;
+    width: 500px;
+    height: 250px;
+}
+
+.game {
+    object-fit: cover;
+    max-width: 300px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+}
+
+.search_info {
+    display: block;
+    /* float: right; */
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 200px;
+    color: white;
+    flex-shrink: 1;
+}
+
+.search_info>span {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 70px;
+    padding: 10px;
+}
+
+.card_title {
+    justify-self: center;
+    font-size: 16px;
+    font-weight: 500;
 }

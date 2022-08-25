@@ -36,6 +36,12 @@
     font-size: 30px;
 }
 
+.search_container {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
 .header_search {
     display: flex;
     justify-self: center;
@@ -44,6 +50,7 @@
 }
 
 .header_search > input {
+    /* margin-top: 10px; */
     padding-left: 15px;
     height: 30px;
     border-radius: 10px;
@@ -53,6 +60,7 @@
 }
 
 .header_search > button {
+    /* padding-top: 10px; */
     margin-left: 5px;
     background-color: rgb(14, 14, 19);
 }
@@ -109,4 +117,11 @@
         height: auto;
         margin: 0;
     }
+}
+
+/* Search result header styles */
+.search_result_title {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
 }

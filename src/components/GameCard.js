@@ -28,7 +28,7 @@ function GameCard({ featured, animVariants, id, image, title, price, windows, ap
     return (
         <AnimatePresence initial={false} mode="wait" custom={direction}>
             <motion.div 
-                className="card"
+                className={featured ? "card" : "search_card"}
                 whileHover={{cursor: 'pointer', boxShadow: "0 0 20px 0px rgb(1, 7, 27)"}}    
                 variants={animVariants}
                 initial= {animVariants?.hidden}
@@ -43,8 +43,8 @@ function GameCard({ featured, animVariants, id, image, title, price, windows, ap
                     id="img"
                     className={featured ? 'slide' : 'game'}
                 />
-                <div id="slide_info" className="slide_info">
-                    <span className="game_title">{title}</span>
+                <div id="slide_info" className={featured ? "slide_info" : "search_info"}>
+                    <span className={featured ? "game_title" : "card_title"}>{title}</span>
                     
                     <motion.button 
                         className="add_cart"

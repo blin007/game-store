@@ -3,6 +3,7 @@ import '../../styles/GameList.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { clearGames } from '../../features/gameList/gameList';
 import GameCard from '../../components/GameCard';
+// import { useLocation } from 'react-router-dom'
 
 function GameList() {
     const [list, setList] = useState([]);
@@ -12,7 +13,7 @@ function GameList() {
     useEffect(() => {
         dispatch(clearGames())
         setList(games)
-        
+        //eslint-disable-next-line
     }, [])
 
   return (
