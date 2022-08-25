@@ -15,6 +15,7 @@ import Purchases from './pages/Purchases/Purchases';
 import Cart from './pages/Cart/Cart';
 import Login from './pages/Login/Login';
 import Checkout from './pages/Checkout/Checkout';
+import GameList from './pages/GameList/GameList';
 
 const stripePromise = loadStripe('pk_test_51LYX9LCBkSPfxTAlVxKX4qCiThnCH3rjhDx9vg47PmGJfzOk0nTveHNC0gppAi28LJTcoTdqNXUGAg50G0RXADK300MRqmODYc');
 
@@ -68,6 +69,7 @@ function App() {
               </Elements>]} 
           />
           <Route path="/purchases" element={[<Header />, <Purchases />]} />
+          <Route path="/gameList" element={[<Header />, <GameList />]} />
         </Routes>
         
         

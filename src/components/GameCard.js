@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux'
 import { addToCart } from '../features/cart/cartSlice'
 
 
-function GameCard({ animVariants, id, image, title, price, windows, apple, xbox, playstation, direction, nintendo }) {
+function GameCard({ featured, animVariants, id, image, title, price, windows, apple, xbox, playstation, direction, nintendo }) {
     const [added, setAdded] = useState(false);
     const dispatch = useDispatch()
 
@@ -31,9 +31,9 @@ function GameCard({ animVariants, id, image, title, price, windows, apple, xbox,
                 className="card"
                 whileHover={{cursor: 'pointer', boxShadow: "0 0 20px 0px rgb(1, 7, 27)"}}    
                 variants={animVariants}
-                initial= {animVariants.hidden}
-                animate= {animVariants.visible}
-                exit= {animVariants.exit}
+                initial= {animVariants?.hidden}
+                animate= {animVariants?.visible}
+                exit= {animVariants?.exit}
                 key={image}
                 custom={direction}
             >
@@ -41,7 +41,7 @@ function GameCard({ animVariants, id, image, title, price, windows, apple, xbox,
                     src={image} 
                     alt="slide" 
                     id="img"
-                    className="slide" 
+                    className={featured ? 'slide' : 'game'}
                 />
                 <div id="slide_info" className="slide_info">
                     <span className="game_title">{title}</span>

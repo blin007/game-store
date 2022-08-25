@@ -3,11 +3,9 @@ import '../../../styles/EstimatedTotal.css'
 import CurrencyFormat from 'react-currency-format'
 import { motion } from 'framer-motion';
 import { cartTotal } from '../../../features/cart/cartSlice'
-// import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 function EstimatedTotal({ cart, buttonVariants }) {
-    // const user = useSelector((state) => state.user);
     const navigate = useNavigate();
 
   return (

@@ -1,9 +1,10 @@
 .card {
     display: flex;
     box-shadow: 0 0 7px 0px #000;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     background-color: rgba(1, 7, 27, 0.695);
     background: linear-gradient(to top, rgba(1, 7, 27, 0.671), #2a475e);
+    margin: 20px;
 }
 
 .add_cart {
@@ -19,6 +20,14 @@
 
 .card:hover .add_cart {
     visibility: visible;
+}
+
+.game {
+    object-fit: cover;
+    max-width: 400px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
 }
 
 .slide_info {

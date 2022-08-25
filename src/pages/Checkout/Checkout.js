@@ -42,7 +42,7 @@ function Checkout({ buttonVariants }) {
         e.preventDefault();
         setProcessing(true);
 
-        const payload = await stripe.confirmCardPayment(clientSecret, {
+        await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement)
             }
@@ -67,6 +67,7 @@ function Checkout({ buttonVariants }) {
     const handleChange = (e) => {
         setDisabled(e.empty)
         setError(e.error ? e.error.message: "")
+        console.log('error: ', error);
     }
 
   return (

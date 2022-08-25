@@ -72,6 +72,7 @@ function Slideshow() {
         <div className="slideshow">
             <div className="slideshow_items">
                 <GameCard 
+                    featured={true}
                     animVariants = {variants}
                     id = {images[index].id}
                     image={images[index].url} 
