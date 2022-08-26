@@ -12,15 +12,16 @@ app.use(cors({origin: true}));
 app.use(express.json());
 
 //routes
+
 // app.get('/', (req, res) => {
 //     res.status(200).send('hello world')
 // })
 
-app.get('/test', (req, res) => {
-    axios.get(`https://api.rawg.io/api/platforms?key=${process.env.RAWG_API_KEY}`).then(response => {
-        res.json(response.data)
-    })
-})
+// app.get('/test', (req, res) => {
+//     axios.get(`https://api.rawg.io/api/platforms?key=${process.env.RAWG_API_KEY}`).then(response => {
+//         res.json(response.data)
+//     })
+// })
 
 app.get('/search', async (req, res) => {
     const gameName = req.query.game;
@@ -30,6 +31,33 @@ app.get('/search', async (req, res) => {
     axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&search=${slug}`).then(response => {
         res.json(response.data);
     })
+})
+
+app.get('/game', async (req, res) => {
+    console.log('req: ', req);
+    const gameId = Number(req.query.id);
+    // const slug = gameName.split(' ').join('-').toLowerCase();
+    console.log('game query id received: ', gameId);
+
+    // const endpoints = [
+    //     `https://api.rawg.io/api/games/${gameId}?key=${process.env.RAWG_API_KEY}`,
+    //     `https://api.rawg.io/api/games/${gameId}/screenshots?key=${process.env.RAWG_API_KEY}`,
+    // ]
+
+    // axios.get(`https://api.rawg.io/api/games/${gameId}?key=${process.env.RAWG_API_KEY}`).then(response => {
+    //     res.json(response.data);
+    // })
+    const gameDetailRequests = axios.get(`https://api.rawg.io/api/games/${gameId}?key=${process.env.RAWG_API_KEY}`);
+    const gameScreenShotsRequests = axios.get(`https://api.rawg.io/api/games/${gameId}/screenshots?key=${process.env.RAWG_API_KEY}`)
+    axios.all([gameDetailRequests, gameScreenShotsRequests]).then(
+        axios.spread((gameDetails, gameScreenShots) => {
+            console.log("game details: ", gameDetails.data)
+            console.log("game screenshots: ", gameScreenShots.data )
+            let gameDetailsData = gameDetails.data;
+            let gameScreenShotsData = gameScreenShots.data
+            res.json({gameDetailsData, gameScreenShotsData})
+        })
+    )
 })
 
 app.post('/checkout/create', async (req, res) => {

@@ -48,20 +48,22 @@ const variants = {
 }
 
 
-function Slideshow() {
+function Slideshow({ featured, screenshots }) {
 
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
 
+    const len = featured ? images.length : screenshots.length;
+
     const moveSlide = (e, step) => {
         if (step > 0) setDirection(1)
         else setDirection(-1)
-        if (step=== 1 && index === images.length - 1){
+        if (step=== 1 && index === len - 1){
             setIndex(0);
             return;
         }
         else if (step=== -1 && index === 0) {
-            setIndex(images.length - 1);
+            setIndex(len - 1);
             return;
         }
         setIndex(index + step)
@@ -71,20 +73,24 @@ function Slideshow() {
     <div className="slideshow_container">
         <div className="slideshow">
             <div className="slideshow_items">
-                <GameCard 
-                    featured={true}
-                    animVariants = {variants}
-                    id = {images[index].id}
-                    image={images[index].url} 
-                    title= {images[index].title}
-                    price= {images[index].price}
-                    windows={images[index].windows} 
-                    apple={images[index].apple} 
-                    xbox={images[index].xbox} 
-                    playstation={images[index].playstation}
-                    nintendo = {images[index].nintendo} 
-                    direction={direction}
-                />
+                {featured ? (
+                    <GameCard 
+                        featured={true}
+                        animVariants = {variants}
+                        id = {images[index].id}
+                        image={images[index].url} 
+                        title= {images[index].title}
+                        price= {images[index].price}
+                        platforms={images[index].platforms}
+                        direction={direction}
+                    />
+                ) : (
+                    <img 
+                        src={screenshots[index]}
+                        alt=""
+                    />
+                )}
+
             </div>
             <motion.button className="prev_button"
                 onClick={e => moveSlide(e, -1)}

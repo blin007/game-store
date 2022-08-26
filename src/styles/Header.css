@@ -37,9 +37,7 @@
 }
 
 .search_container {
-    display: flex;
-    justify-self: center;
-    align-items: center;
+    min-width: fit-content;
 }
 
 .header_search {
@@ -53,6 +51,7 @@
     /* margin-top: 10px; */
     padding-left: 15px;
     height: 30px;
+    width: 500px;
     border-radius: 10px;
     color: white;
     background-color: rgb(56, 56, 56);
@@ -119,9 +118,33 @@
     }
 }
 
-/* Search result header styles */
-.search_result_title {
+/* game detail nav header styles */
+.game_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    border-bottom: 1px solid lightgray;
+    /* height: 200px; */
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav_button {
+    min-width: fit-content;
+    min-height: fit-content;
+    /* width: 20px; */
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.game_header > h2 {
+    text-align: right;
     color: white;
-    font-size: 20px;
-    font-weight: 400;
+    font-weight: 700;
 }

@@ -34,36 +34,23 @@ const buttonVariants = {
 const pageVariants = {
   hidden: {
     opacity: 0,
-    // x:"100vw",
-    x: 40,
+    x: 30,
     transition: {
-      // ease: 'easeInOut', 
-      // type: 'tween',
-      // delay: 0.5,
-      duration: 1.5
+      duration: 0.5
     }
   },
   visible: {
     opacity: 1,
     x: 0,
-    // width: "100%",
     transition: {
-      // delay: 0.5,
-      duration: 1.5,
-      // ease: 'linear',
-      // type: 'tween'
+      duration: 1,
     }
   },
   exit: {
     opacity: 0,
-    x: -50,
-    // x: '-100vh',
+    x: -30,
     transition: { 
-      // ease: 'easeInOut', 
-      // type: 'tween',
-      duration: 1,
-      staggerChildren: 1,
-      // when: 'afterChildren'
+      duration: 0.5,
     }
   }
 }
@@ -110,7 +97,7 @@ function App() {
           />
           <Route path="/purchases" element={[<Header />, <Purchases pageVariants={pageVariants}/>]} />
           <Route exact path="/gameList/:search" element={[<Header />, <GameList pageVariants={pageVariants}/>]} />
-          <Route exact path="/game/:name" element={[<Header />, <GameDetail pageVariants={pageVariants}/>]}/>
+          <Route exact path="/game/:gameId" element={[<Header />, <GameDetail pageVariants={pageVariants}/>]}/>
         </Routes>
       </AnimatePresence>
   );

@@ -25,7 +25,7 @@ function Home({ pageVariants }) {
         <div className="home_content_container">
           <div className="home_content">
             <h3 className="content_title">FEATURED</h3>
-            <Slideshow />
+            <Slideshow featured={true}/>
           </div>
         </div>
     </motion.div>

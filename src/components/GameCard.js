@@ -11,13 +11,15 @@ import { addToCart } from '../features/cart/cartSlice'
 import { useNavigate } from 'react-router-dom'
 
 
-function GameCard({ featured, animVariants, id, image, title, price, windows, apple, xbox, playstation, direction, nintendo }) {
+
+function GameCard({ featured, animVariants, id, image, title, price, platforms, direction }) {
     const [added, setAdded] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate(`/game/${title}`)
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate(`/game/${id}`)
     }
 
     const addCart = () => {
@@ -33,11 +35,11 @@ function GameCard({ featured, animVariants, id, image, title, price, windows, ap
 
     return (
 
-        <AnimatePresence initial={false} mode="wait" custom={direction}>
+        <AnimatePresence initial={false} mode="wait" custom={direction} >
             {/* Only load game cards that have an image to show */}
             {image && (
                 <motion.div 
-                    onClick={handleClick}
+                    onClick={e => handleClick(e)}
                     className={featured ? "card" : "search_card"}
                     whileHover={{cursor: 'pointer', boxShadow: "0 0 20px 0px rgb(1, 7, 27)"}}    
                     variants={animVariants}
@@ -70,11 +72,11 @@ function GameCard({ featured, animVariants, id, image, title, price, windows, ap
                         <span>Top Seller!</span>
                         <div className="game_price">{price}</div>
                         <div className="platforms">
-                            {windows && (<FaWindows className="platform" />)}
-                            {apple && (<FaApple className="platform"/>)}
-                            {xbox && (<FaXbox className="platform"/>)}
-                            {playstation && (<FaPlaystation className="platform"/>)}
-                            {nintendo && (<TbDeviceNintendo className="platform" />)}
+                            {platforms?.windows && (<FaWindows className="platform" />)}
+                            {platforms?.apple && (<FaApple className="platform"/>)}
+                            {platforms?.xbox && (<FaXbox className="platform"/>)}
+                            {platforms?.playstation && (<FaPlaystation className="platform"/>)}
+                            {platforms?.nintendo && (<TbDeviceNintendo className="platform" />)}
                         </div>
                     </div>   
 

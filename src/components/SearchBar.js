@@ -51,7 +51,7 @@ function SearchBar() {
                 className="header_search_input" 
                 type="text"
                 placeholder="Search Games..."
-                initial={{width: 500}}
+                // initial={{width: 500}}
                 whileHover={{ boxShadow: "0px 0px 8px rgb(255,255,255)"}}
                 whileFocus={{ width: 800, backgroundColor: "rgb(83,83,83)"}}
                 onChange={e => setGameName(e.target.value)}

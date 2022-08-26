@@ -1,0 +1,794 @@
+[debug] [2022-08-26T16:29:25.623Z] ----------------------------------------------------------------------
+[debug] [2022-08-26T16:29:25.626Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Brian\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-08-26T16:29:25.626Z] CLI Version:   11.8.0
+[debug] [2022-08-26T16:29:25.626Z] Platform:      win32
+[debug] [2022-08-26T16:29:25.627Z] Node Version:  v16.17.0
+[debug] [2022-08-26T16:29:25.645Z] Time:          Fri Aug 26 2022 12:29:25 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-08-26T16:29:25.645Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-26T16:29:25.649Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-08-26T16:29:25.738Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-26T16:29:25.738Z] > authorizing via signed-in user (blin00712@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-08-26T16:29:25.821Z] [hub] writing locator at C:\Users\Brian\AppData\Local\Temp\hub-game-store-589e9.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage, eventarc {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage, eventarc\u001b[22m"}}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-08-26T16:29:25.894Z] defaultcredentials: writing to file C:\Users\Brian\AppData\Roaming\firebase\blin00712_gmail_com_application_default_credentials.json
+[debug] [2022-08-26T16:29:25.908Z] Setting GAC to C:\Users\Brian\AppData\Roaming\firebase\blin00712_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Brian\\AppData\\Roaming\\firebase\\blin00712_gmail_com_application_default_credentials.json"}}
+[debug] [2022-08-26T16:29:25.910Z] > refreshing access token with scopes: []
+[debug] [2022-08-26T16:29:25.913Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-08-26T16:29:25.914Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-26T16:29:25.952Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-08-26T16:29:25.952Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-08-26T16:29:26.138Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-08-26T16:29:26.138Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-08-26T16:29:26.146Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/game-store-589e9/adminSdkConfig [none]
+[debug] [2022-08-26T16:29:26.407Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/game-store-589e9/adminSdkConfig 200
+[debug] [2022-08-26T16:29:26.407Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/game-store-589e9/adminSdkConfig {"projectId":"game-store-589e9","storageBucket":"game-store-589e9.appspot.com","locationId":"us-central"}
+[debug] [2022-08-26T16:29:26.441Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-08-26T16:29:26.441Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-08-26T16:29:26.442Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\Brian\\.cache\\firebase\\emulators\\ui-v1.9.0\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\Brian\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.9.0\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-08-26T16:29:26.645Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "C:\Users\Brian\Documents\CS Projects\game-store\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\" for Cloud Functions..."}}
+[debug] [2022-08-26T16:29:26.722Z] Validating nodejs source
+[debug] [2022-08-26T16:29:30.308Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T16:29:30.309Z] Building nodejs source
+[debug] [2022-08-26T16:29:30.309Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T16:29:30.312Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T16:29:30.668Z] Serving at port 9005
+
+[debug] [2022-08-26T16:29:30.974Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T16:29:30.980Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[info] +  functions[us-central1-api]: http function initialized (http://localhost:5001/game-store-589e9/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/game-store-589e9/us-central1/api)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-08-26T17:02:42.711Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:02:43.759Z] Validating nodejs source
+[debug] [2022-08-26T17:02:48.196Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:02:48.196Z] Building nodejs source
+[debug] [2022-08-26T17:02:48.197Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:02:48.202Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:02:48.234Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:02:48.668Z] Serving at port 9005
+
+[debug] [2022-08-26T17:02:49.095Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:02:49.105Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:02:49.263Z] Validating nodejs source
+[debug] [2022-08-26T17:02:52.513Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:02:52.513Z] Building nodejs source
+[debug] [2022-08-26T17:02:52.513Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:02:52.513Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:02:52.839Z] Serving at port 9005
+
+[debug] [2022-08-26T17:02:53.056Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:02:53.065Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:02:56.868Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:02:57.873Z] Validating nodejs source
+[debug] [2022-08-26T17:03:01.124Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:03:01.124Z] Building nodejs source
+[debug] [2022-08-26T17:03:01.124Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:03:01.125Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:03:01.570Z] Serving at port 9005
+
+[debug] [2022-08-26T17:03:01.838Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:03:01.842Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:03:54.627Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:03:55.632Z] Validating nodejs source
+[debug] [2022-08-26T17:03:58.215Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:03:58.215Z] Building nodejs source
+[debug] [2022-08-26T17:03:58.215Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:03:58.216Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:03:58.227Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:03:58.506Z] Serving at port 9005
+
+[debug] [2022-08-26T17:03:58.708Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:03:58.714Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:03:59.231Z] Validating nodejs source
+[debug] [2022-08-26T17:04:02.857Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:02.857Z] Building nodejs source
+[debug] [2022-08-26T17:04:02.857Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:02.859Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:02.874Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:03.286Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:03.553Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:04:03.559Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:04:03.877Z] Validating nodejs source
+[debug] [2022-08-26T17:04:06.637Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:06.637Z] Building nodejs source
+[debug] [2022-08-26T17:04:06.637Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:06.638Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:06.650Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:06.941Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:07.153Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:04:07.159Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:04:07.652Z] Validating nodejs source
+[debug] [2022-08-26T17:04:10.947Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:10.947Z] Building nodejs source
+[debug] [2022-08-26T17:04:10.947Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:10.947Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:11.218Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:11.294Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:11.310Z] Got response from /__/functions.yaml Failed to generate manifest from function source: SyntaxError: Missing initializer in const declaration
+[debug] [2022-08-26T17:04:11.313Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 62:
+     ... rom function source: SyntaxError: Missing initializer in const d ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: SyntaxError: Missing initializer in const declaration\n\u0000","position":61,"line":0,"column":61},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 62:\n     ... rom function source: SyntaxError: Missing initializer in const d ... \n                                         ^"}
+[debug] [2022-08-26T17:04:11.317Z] shutdown requested via /__/quitquitquit
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: SyntaxError: Missing initializer in const declaration {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: SyntaxError: Missing initializer in const declaration"}}
+[debug] [2022-08-26T17:04:12.223Z] Validating nodejs source
+[debug] [2022-08-26T17:04:15.531Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:15.531Z] Building nodejs source
+[debug] [2022-08-26T17:04:15.531Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:15.532Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:15.700Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:15.963Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:15.992Z] Got response from /__/functions.yaml Failed to generate manifest from function source: SyntaxError: Unexpected token '}'
+[debug] [2022-08-26T17:04:15.993Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 62:
+     ... rom function source: SyntaxError: Unexpected token '}'
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: SyntaxError: Unexpected token '}'\n\u0000","position":61,"line":0,"column":61},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 62:\n     ... rom function source: SyntaxError: Unexpected token '}'\n                                         ^"}
+[debug] [2022-08-26T17:04:15.999Z] shutdown requested via /__/quitquitquit
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: SyntaxError: Unexpected token '}' {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Failed to load function definition from source: Failed to generate manifest from function source: SyntaxError: Unexpected token '}'"}}
+[debug] [2022-08-26T17:04:16.704Z] Validating nodejs source
+[debug] [2022-08-26T17:04:19.719Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:19.719Z] Building nodejs source
+[debug] [2022-08-26T17:04:19.719Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:19.720Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:19.732Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:20.247Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:20.735Z] Validating nodejs source
+[debug] [2022-08-26T17:04:24.946Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:24.947Z] Building nodejs source
+[debug] [2022-08-26T17:04:24.947Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:24.954Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:04:24.955Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:24.983Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:04:25.509Z] Serving at port 9006
+
+[debug] [2022-08-26T17:04:25.873Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:04:25.880Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:04:27.182Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:28.183Z] Validating nodejs source
+[debug] [2022-08-26T17:04:32.121Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:32.121Z] Building nodejs source
+[debug] [2022-08-26T17:04:32.121Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:32.122Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:32.139Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:32.521Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:32.839Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:04:32.847Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:04:33.141Z] Validating nodejs source
+[debug] [2022-08-26T17:04:36.679Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:36.680Z] Building nodejs source
+[debug] [2022-08-26T17:04:36.680Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:36.681Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:37.179Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:37.517Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:04:37.524Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:04:40.817Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:41.819Z] Validating nodejs source
+[debug] [2022-08-26T17:04:44.651Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:44.651Z] Building nodejs source
+[debug] [2022-08-26T17:04:44.651Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:44.659Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:45.040Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:45.381Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:04:45.388Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:04:51.449Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:52.450Z] Validating nodejs source
+[debug] [2022-08-26T17:04:55.849Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:55.849Z] Building nodejs source
+[debug] [2022-08-26T17:04:55.849Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:55.851Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:04:55.862Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:04:56.135Z] Serving at port 9005
+
+[debug] [2022-08-26T17:04:56.318Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:04:56.322Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:04:56.865Z] Validating nodejs source
+[debug] [2022-08-26T17:04:59.648Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:04:59.649Z] Building nodejs source
+[debug] [2022-08-26T17:04:59.649Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:04:59.649Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:05:00.020Z] Serving at port 9005
+
+[debug] [2022-08-26T17:05:00.548Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:05:00.558Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:05:00.979Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:05:01.979Z] Validating nodejs source
+[debug] [2022-08-26T17:05:04.712Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:05:04.712Z] Building nodejs source
+[debug] [2022-08-26T17:05:04.712Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:05:04.713Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:05:05.003Z] Serving at port 9005
+
+[debug] [2022-08-26T17:05:05.232Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:05:05.238Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2022-08-26T17:05:37.807Z] File C:\Users\Brian\Documents\CS Projects\game-store\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Brian\\Documents\\CS Projects\\game-store\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-08-26T17:05:38.808Z] Validating nodejs source
+[debug] [2022-08-26T17:05:41.715Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^10.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-08-26T17:05:41.715Z] Building nodejs source
+[debug] [2022-08-26T17:05:41.715Z] Analyzing nodejs backend spec
+[debug] [2022-08-26T17:05:41.716Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-08-26T17:05:42.046Z] Serving at port 9005
+
+[debug] [2022-08-26T17:05:42.246Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-08-26T17:05:42.251Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
