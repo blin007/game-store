@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { clearCart } from '../../features/cart/cartSlice';
 import { motion } from 'framer-motion';
 
-function Cart({ buttonVariants }) {
+function Cart({ buttonVariants, pageVariants }) {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -17,7 +17,13 @@ function Cart({ buttonVariants }) {
   }
 
   return (
-    <div className="cart">
+    <motion.div 
+      className="cart"
+      variants={pageVariants}
+      initial={pageVariants?.hidden}
+      animate={pageVariants?.visible}
+      exit={pageVariants?.exit}
+    >
       <h2 className="cart_title">YOUR SHOPPING CART</h2>
       <div className="cart_container">
         
@@ -57,7 +63,7 @@ function Cart({ buttonVariants }) {
           <EstimatedTotal cart={cart} buttonVariants={buttonVariants}/>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

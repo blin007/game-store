@@ -2,11 +2,18 @@ import React from 'react'
 import '../../styles/Home.css'
 import HomeNavbar from './components/HomeNavbar'
 import Slideshow from './components/Slideshow'
+import { motion } from 'framer-motion'
 
 
-function Home() {
+function Home({ pageVariants }) {
   return (
-    <div className="home">
+    <motion.div 
+      className="home"
+      variants={pageVariants}
+      initial={pageVariants?.hidden}
+      animate={pageVariants?.visible}
+      exit={pageVariants?.exit}
+    >
         <HomeNavbar />
 
         <img 
@@ -21,7 +28,7 @@ function Home() {
             <Slideshow />
           </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

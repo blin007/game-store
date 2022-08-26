@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux' 
 import { auth } from '../db/firebase'
-import { loadProgressBar } from 'axios-progress-bar'
+// import { loadProgressBar } from 'axios-progress-bar'
 // import axios from '../axios'
 // import 'axios-progress-bar/dist/nprogress.css'
 

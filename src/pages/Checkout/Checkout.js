@@ -10,7 +10,7 @@ import axios from '../../axios'
 import { useNavigate } from 'react-router-dom'
 import { db } from '../../db/firebase'
 
-function Checkout({ buttonVariants }) {
+function Checkout({ buttonVariants, pageVariants }) {
     const cart = useSelector((state) => state.cart)
     const user = useSelector((state) => state.user)
     const dispatch = useDispatch();
@@ -71,7 +71,13 @@ function Checkout({ buttonVariants }) {
     }
 
   return (
-    <div className="checkout">
+    <motion.div 
+        className="checkout"
+        variants={pageVariants}
+        initial={pageVariants?.hidden}
+        animate={pageVariants?.visible}
+        exit={pageVariants?.exit}
+    >
         <div className="checkout_container">
             
             <div className="checkout_content_left">
@@ -133,7 +139,7 @@ function Checkout({ buttonVariants }) {
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements} from '@stripe/react-stripe-js';
 import { useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
 import { auth } from './db/firebase';
 import { setUser } from './features/user/userSlice';
@@ -16,6 +17,7 @@ import Cart from './pages/Cart/Cart';
 import Login from './pages/Login/Login';
 import Checkout from './pages/Checkout/Checkout';
 import GameList from './pages/GameList/GameList';
+import GameDetail from './pages/GameDetail/GameDetail';
 
 const stripePromise = loadStripe('pk_test_51LYX9LCBkSPfxTAlVxKX4qCiThnCH3rjhDx9vg47PmGJfzOk0nTveHNC0gppAi28LJTcoTdqNXUGAg50G0RXADK300MRqmODYc');
 
@@ -29,8 +31,29 @@ const buttonVariants = {
   }
 }
 
+const pageVariants = {
+  hidden: {
+    x:"100vw",
+    // transition: {ease: 'easeInOut'}
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    // width: "100%",
+    transition: {
+      // delay: 1.5,
+      // duration: 1.5,
+    }
+  },
+  exit: {
+    x: '-100vh',
+    transition: { ease: 'easeInOut'}
+  }
+}
+
 function App() {
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -54,27 +77,25 @@ function App() {
     //eslint-disable-next-line
   }, [])
 
+  //defined router in index.js rather than app.js because otherwise we would not be able to animate routes using the useLocation hook
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={[<Header />, <Home />]}/>
-          <Route path="/cart" element={[<Header />, <Cart buttonVariants={buttonVariants}/>]}/>
-          <Route path="/login" element={[<Header />, <Login buttonVariants={buttonVariants}/>]} />
+      <AnimatePresence initial={false} mode='wait'>
+        <Routes key={location.pathname} location={location}>
+          <Route path="/" element={[<Header />, <Home pageVariants={pageVariants}/>]}/>
+          <Route path="/cart" element={[<Header />, <Cart buttonVariants={buttonVariants} pageVariants={pageVariants}/>]}/>
+          <Route path="/login" element={[<Header />, <Login buttonVariants={buttonVariants} pageVariants={pageVariants}/>]} />
           <Route path="/checkout" 
             element={[
               <Header />, 
               <Elements stripe={stripePromise}>
-                <Checkout buttonVariants={buttonVariants}/>
+                <Checkout buttonVariants={buttonVariants} pageVariants={pageVariants}/>
               </Elements>]} 
           />
-          <Route path="/purchases" element={[<Header />, <Purchases />]} />
-          <Route path="/gameList" element={[<Header />, <GameList />]} />
+          <Route path="/purchases" element={[<Header />, <Purchases pageVariants={pageVariants}/>]} />
+          <Route exact path="/gameList/:search" element={[<Header />, <GameList pageVariants={pageVariants}/>]} />
+          <Route exact path="/game/:name" element={[<Header />, <GameDetail pageVariants={pageVariants}/>]}/>
         </Routes>
-        
-        
-      </div>
-    </Router>
+      </AnimatePresence>
   );
 }
 

@@ -3,8 +3,9 @@ import '../../styles/Purchases.css'
 import { db } from '../../db/firebase'
 import { useSelector } from 'react-redux'
 import PurchasedItem from './components/PurchasedItem'
+import { motion } from 'framer-motion'
 
-function Purchases() {
+function Purchases({ pageVariants }) {
   const user = useSelector((state) => state.user)
   const [purchases, setPurchases] = useState([]);
 
@@ -30,14 +31,20 @@ function Purchases() {
   }, [user])
 
   return (
-    <div className="purchases">
+    <motion.div 
+      className="purchases"
+      variants={pageVariants}
+      initial={pageVariants?.hidden}
+      animate={pageVariants?.visible}
+      exit={pageVariants?.exit}
+    >
         <h1 className='purchase_title'>Purchases</h1>
         <div className="purchases_container">
           {purchases?.map(item => (
             <PurchasedItem item={item}/>
           ))}
         </div>
-    </div>
+    </motion.div>
   )
 }
 

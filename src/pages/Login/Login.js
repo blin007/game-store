@@ -14,7 +14,7 @@ const textFieldVariants = {
     },
 }
 
-function Login({ buttonVariants }) {
+function Login({ buttonVariants, pageVariants }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -37,7 +37,13 @@ function Login({ buttonVariants }) {
     }
 
   return (
-    <div className="login">
+    <motion.div 
+        className="login"
+        variants={pageVariants}
+        initial={pageVariants?.hidden}
+        animate={pageVariants?.visible}
+        exit={pageVariants?.exit}
+    >
         <div className="login_container">
             <h1 className="login_title">SIGN IN</h1>
 
@@ -84,7 +90,7 @@ function Login({ buttonVariants }) {
                 Create Account
             </motion.button>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
