@@ -13,16 +13,7 @@ app.use(express.json());
 
 //routes
 
-// app.get('/', (req, res) => {
-//     res.status(200).send('hello world')
-// })
-
-// app.get('/test', (req, res) => {
-//     axios.get(`https://api.rawg.io/api/platforms?key=${process.env.RAWG_API_KEY}`).then(response => {
-//         res.json(response.data)
-//     })
-// })
-
+//get game search list
 app.get('/search', async (req, res) => {
     const gameName = req.query.game;
     const slug = gameName.split(' ').join('-').toLowerCase();
@@ -33,20 +24,13 @@ app.get('/search', async (req, res) => {
     })
 })
 
+
+//get game details and screen shots
 app.get('/game', async (req, res) => {
     console.log('req: ', req);
     const gameId = Number(req.query.id);
-    // const slug = gameName.split(' ').join('-').toLowerCase();
     console.log('game query id received: ', gameId);
 
-    // const endpoints = [
-    //     `https://api.rawg.io/api/games/${gameId}?key=${process.env.RAWG_API_KEY}`,
-    //     `https://api.rawg.io/api/games/${gameId}/screenshots?key=${process.env.RAWG_API_KEY}`,
-    // ]
-
-    // axios.get(`https://api.rawg.io/api/games/${gameId}?key=${process.env.RAWG_API_KEY}`).then(response => {
-    //     res.json(response.data);
-    // })
     const gameDetailRequests = axios.get(`https://api.rawg.io/api/games/${gameId}?key=${process.env.RAWG_API_KEY}`);
     const gameScreenShotsRequests = axios.get(`https://api.rawg.io/api/games/${gameId}/screenshots?key=${process.env.RAWG_API_KEY}`)
     axios.all([gameDetailRequests, gameScreenShotsRequests]).then(
@@ -60,6 +44,7 @@ app.get('/game', async (req, res) => {
     )
 })
 
+//post payment
 app.post('/checkout/create', async (req, res) => {
     const paymentAmount = req.query.total;
     console.log('payment request received for this amount: ', paymentAmount);
