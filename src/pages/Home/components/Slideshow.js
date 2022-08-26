@@ -28,7 +28,7 @@ const variants = {
             }
         }
     },
-    exit: direction => {
+    exitShow: direction => {
         return {
             x: direction > 0 ? -100 : 100,
             opacity: 0,

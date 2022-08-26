@@ -43,7 +43,7 @@ function GameCard({ featured, animVariants, id, image, title, price, windows, ap
                     variants={animVariants}
                     initial= {animVariants?.hidden}
                     animate= {animVariants?.visible}
-                    exit= {animVariants?.exit}
+                    exit= {animVariants?.exitShow}
                     key={image}
                     custom={direction}
                 >

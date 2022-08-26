@@ -34,12 +34,13 @@ const buttonVariants = {
 const pageVariants = {
   hidden: {
     opacity: 0,
-    x:"100vw",
+    // x:"100vw",
+    x: 40,
     transition: {
-      ease: 'easeInOut', 
+      // ease: 'easeInOut', 
       // type: 'tween',
       // delay: 0.5,
-      duration: 1
+      duration: 1.5
     }
   },
   visible: {
@@ -48,18 +49,19 @@ const pageVariants = {
     // width: "100%",
     transition: {
       // delay: 0.5,
-      duration: 0.8,
+      duration: 1.5,
       // ease: 'linear',
       // type: 'tween'
     }
   },
   exit: {
     opacity: 0,
-    x: '-100vh',
+    x: -50,
+    // x: '-100vh',
     transition: { 
-      ease: 'easeInOut', 
+      // ease: 'easeInOut', 
       // type: 'tween',
-      duration: 0.8,
+      duration: 1,
       staggerChildren: 1,
       // when: 'afterChildren'
     }
