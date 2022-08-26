@@ -33,21 +33,36 @@ const buttonVariants = {
 
 const pageVariants = {
   hidden: {
+    opacity: 0,
     x:"100vw",
-    // transition: {ease: 'easeInOut'}
+    transition: {
+      ease: 'easeInOut', 
+      // type: 'tween',
+      // delay: 0.5,
+      duration: 1
+    }
   },
   visible: {
     opacity: 1,
     x: 0,
     // width: "100%",
     transition: {
-      // delay: 1.5,
-      // duration: 1.5,
+      // delay: 0.5,
+      duration: 0.8,
+      // ease: 'linear',
+      // type: 'tween'
     }
   },
   exit: {
+    opacity: 0,
     x: '-100vh',
-    transition: { ease: 'easeInOut'}
+    transition: { 
+      ease: 'easeInOut', 
+      // type: 'tween',
+      duration: 0.8,
+      staggerChildren: 1,
+      // when: 'afterChildren'
+    }
   }
 }
 
