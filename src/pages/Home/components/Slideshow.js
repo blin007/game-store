@@ -53,7 +53,7 @@ function Slideshow({ featured, screenshots }) {
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
 
-    const len = featured ? images.length : screenshots.length;
+    const len = featured ? images.length : screenshots?.length;
 
     const moveSlide = (e, step) => {
         if (step > 0) setDirection(1)

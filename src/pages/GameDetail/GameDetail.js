@@ -9,9 +9,21 @@ import Slideshow from '../Home/components/Slideshow';
 function GameDetail() {
   const params = useParams();
   const gameId = Number(params.gameId);
-  const [game, setGame] = useState({});
-  const [screenshots, setScreenshots] = useState({});
+  const [game, setGame] = useState({
+    // id: 0,
+    // name: "",
+    // description: "",
 
+  });
+  const [screenshots, setScreenshots] = useState({
+    // results: []
+  });
+
+
+  const getStates = () => {
+    console.log("GAME STATE: ", game);
+    console.log("SCREEN SHOT STATE: ", screenshots)
+  }   
 
   useEffect(() => {
     (async () => {
@@ -27,19 +39,21 @@ function GameDetail() {
 
       console.log("res game details: ", res.data.gameDetailsData);
       console.log("res game screen shots: ", res.data.gameScreenShotsData);
+      // const images = res.data.gameScreenShotsData.results;
+      // const gameDetails = res.data.gameDetailsData
       setGame(res.data.gameDetailsData)
-      setScreenshots(res.data.gameScreenShotsData);
+      setScreenshots(res.data.gameScreenShotsData.results);
       console.log('game: ', game);
       console.log('screen shots: ', screenshots);
     })();
 
   }, [gameId])
 
-
   return (
     <div className="game_detail">
       <GameHeader showNavLink={true} title={game?.name}/>
       <div className="game_container">
+        <button onClick={getStates}>TEST</button>
         {/* <Slideshow featured = {false} screenshots={screenshots?.results}/> */}
       </div>
     </div>
