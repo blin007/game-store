@@ -119,17 +119,55 @@
 }
 
 /* game detail nav header styles */
-.game_header {
+.game_header_container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
     margin-top: 15px;
     border-bottom: 1px solid lightgray;
     /* height: 200px; */
-    width: 70%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+}
+
+.game_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.game_header > h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.game_cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    margin-left: 30px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.game_cart > h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.game_add_cart_button {
+    width: 60px;
+    height: 40px;
+    padding: 10px;
+    /* background: rgba(0, 0, 0, 0.2); */
+    background: none;
+    /* margin-left: 10px; */
 }
 
 .nav_button {

@@ -51,17 +51,29 @@ function GameDetail({ pageVariants }) {
       animate={pageVariants?.visible}
       exit={pageVariants?.exit}
     >
-      
-      <div className="game_container">
-        <GameHeader showNavLink={true} title={game?.name}/>
-        <div className="game_left">
-          {/* <button onClick={getStates}>TEST</button> */}
-          <Slideshow featured = {false} screenshots={screenshots}/>
-        </div>
-        <div className="game_right">
+      {game ? (
+        <div className="game_container">
+          <GameHeader showNavLink={true} title={game?.name}/>
+          <div className="game_content">
+            {/* <button onClick={getStates}>TEST</button> */}
+            <div className="game_slideshow">
+              <Slideshow featured = {false} screenshots={screenshots}/>
+            </div>
+            <div className="game_info">
+              <div className="game_description">
+                <h3>Summary</h3>
+                {game.description_raw ? game.description_raw : (
+                  <p>No description available</p>
+                )}
+              </div>
 
-        </div>
-      </div>
+            </div>
+          </div>
+        </div>     
+      ): (
+        <p>Loading...</p>
+      )} 
+
     </motion.div>
   )
 }

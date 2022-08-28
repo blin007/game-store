@@ -42,7 +42,7 @@ button {
     background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
 }
 
-/* for non featured slide shows */
+/* for non featured slide shows e.g. image slide shows when selecting a game*/
 .slide_image {
     object-fit: cover;
     max-width: 1000px;
@@ -50,4 +50,11 @@ button {
     width: auto;
     height: auto;
     /* margin-top: 50px; */
+}
+
+.gamedetail_prev_button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
 }

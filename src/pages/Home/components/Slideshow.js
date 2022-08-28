@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../../../styles/Slideshow.css'
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -57,7 +57,7 @@ function Slideshow({ featured, screenshots }) {
 
     // console.log("screenshots and index: ", screenshots, index);
 
-    const moveSlide = (e, step) => {
+    const moveSlide = (step) => {
         if (step > 0) setDirection(1)
         else setDirection(-1)
         if (step=== 1 && index === len - 1){
@@ -68,14 +68,25 @@ function Slideshow({ featured, screenshots }) {
             setIndex(len - 1);
             return;
         }
-        setIndex(index + step)
+        setIndex((index) => index + step)
     }
+
+    // const setIndexByTime = () => {
+    //     setTimeout(() => {
+    //         moveSlide(1);
+    //     }, 5000);
+    // }
+
+    // useEffect(() => {
+    //     setIndexByTime();
+    // }, [index])
 
   return (
     <div className="slideshow_container">
         <div className="slideshow">
             <div className="slideshow_items">
                 {featured ? (
+                    <>
                     <GameCard 
                         featured={true}
                         animVariants = {variants}
@@ -86,36 +97,52 @@ function Slideshow({ featured, screenshots }) {
                         platforms={images[index].platforms}
                         direction={direction}
                     />
+                    <motion.button className="prev_button"
+                        onClick={e => moveSlide(-1)}
+                        whileHover={{background: "linear-gradient(to right, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
+                    >
+                        <NavigateBeforeIcon fontSize='large' className="arrow"/>
+                    </motion.button>
+                    <motion.button className="next_button"
+                        onClick={e => moveSlide(1)}
+                        whileHover={{background: "linear-gradient(to left, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
+                    >
+                        <NavigateNextIcon fontSize='large' className="arrow"/>
+                    </motion.button>
+                    </>
                 ) : (
-                    <AnimatePresence initial={false} mode="wait" custom={direction}>
-                        <motion.img 
-                            variants={variants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="exitShow"
-                            key={screenshots[index]?.image}
-                            custom={direction}
+                    <>
+                        <AnimatePresence initial={false} mode="wait" custom={direction}>
+                            <motion.img 
+                                variants={variants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="exitShow"
+                                key={screenshots[index]?.image}
+                                custom={direction}
 
-                            src={screenshots[index]?.image}
-                            alt=""
-                            className="slide_image"
-                        />
-                    </AnimatePresence>
+                                src={screenshots[index]?.image}
+                                alt=""
+                                className="slide_image"
+                            />
+                        </AnimatePresence>
+                        <motion.button className="gamedetail_prev_button"
+                            onClick={e => moveSlide(-1)}
+                            whileHover={{background: "linear-gradient(to right, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
+                        >
+                            <NavigateBeforeIcon fontSize='large' className="arrow"/>
+                        </motion.button>
+                        <motion.button className="gamedetail_next_button"
+                            onClick={e => moveSlide(1)}
+                            whileHover={{background: "linear-gradient(to left, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
+                        >
+                            <NavigateNextIcon fontSize='large' className="arrow"/>
+                        </motion.button>
+                    </>
                 )}
 
             </div>
-            <motion.button className="prev_button"
-                onClick={e => moveSlide(e, -1)}
-                whileHover={{background: "linear-gradient(to right, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
-            >
-                <NavigateBeforeIcon fontSize='large' className="arrow"/>
-            </motion.button>
-            <motion.button className="next_button"
-                onClick={e => moveSlide(e, 1)}
-                whileHover={{background: "linear-gradient(to left, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
-            >
-                <NavigateNextIcon fontSize='large' className="arrow"/>
-            </motion.button>
+
         </div>
     </div>
 
