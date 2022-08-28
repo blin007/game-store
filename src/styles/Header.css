@@ -48,7 +48,6 @@
 }
 
 .header_search > input {
-    /* margin-top: 10px; */
     padding-left: 15px;
     height: 30px;
     width: 500px;
@@ -59,7 +58,6 @@
 }
 
 .header_search > button {
-    /* padding-top: 10px; */
     margin-left: 5px;
     background-color: rgb(14, 14, 19);
 }
@@ -124,10 +122,9 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    margin-top: 15px;
+    margin-top: 30px;
     border-bottom: 1px solid lightgray;
-    /* height: 200px; */
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     color: white;
@@ -145,12 +142,23 @@
     font-weight: 800;
 }
 
+.game_header_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28%;
+}
+
+.game_header_info > h4 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
 .game_cart {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15%;
-    margin-left: 30px;
+    margin-left: 20px;
     padding: 10px;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -179,7 +187,6 @@
     width: 120px;
     height: 50px;
     border-radius: 16px;
-
 }
 
 .nav_button > span {

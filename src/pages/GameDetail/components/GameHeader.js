@@ -37,20 +37,23 @@ function GameHeader({ showNavLink, title }) {
           <h2>{title}</h2>
         )}
       </nav>
-      <motion.div 
-        className="game_cart"
-        whileHover={{scale: 1.2, textShadow: "0px 0px 8px rgb(255,255,255)", cursor: 'pointer'}}
-        whileTap={{scale: 1}}
-        onClick={addCart}
-      >
-        <h3>Add to Cart</h3>
-        <button 
-            className="game_add_cart_button"
-        > 
-            {!added && <BsCartPlus size={20}/> }
-            {added && <BsCartCheck size={20} />}
-        </button>
-      </motion.div>
+      <div className="game_header_info">
+        <h4>$59.99</h4>
+        <motion.div 
+          className="game_cart"
+          whileHover={{scale: 1.2, textShadow: "0px 0px 8px rgb(255,255,255)", cursor: 'pointer'}}
+          whileTap={{scale: 1}}
+          onClick={addCart}
+        >
+          <h3>Add to Cart</h3>
+          <button 
+              className="game_add_cart_button"
+          > 
+              {!added && <BsCartPlus size={20}/> }
+              {added && <BsCartCheck size={20} />}
+          </button>
+        </motion.div>
+      </div>
     </div>
 
   )
