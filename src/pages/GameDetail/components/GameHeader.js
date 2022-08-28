@@ -23,12 +23,14 @@ function GameHeader({ showNavLink, title }) {
       <nav className="game_header">
         {showNavLink && (
           <div>
-            <button
+            <motion.button
               className="nav_button"
+              whileHover={{scale: 1.2, textShadow: "0px 0px 8px rgb(255,255,255)", cursor: 'pointer'}}
+              whileTap={{scale: 1}}
               onClick={e => goBack(e)}
             > 
-              <ArrowBackIcon />Home
-            </button>
+              <ArrowBackIcon /><span>Home</span>
+            </motion.button>
           </div>
         )}
         {title && (

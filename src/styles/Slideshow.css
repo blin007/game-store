@@ -1,22 +1,7 @@
-.slideshow_container {
-    display: flex;
-    /* box-shadow: 0 0 7px 0px #000;
-
-    margin-top: 10px;
-    background-color:rgba(1, 7, 27, 0.695);
-    background: linear-gradient(to top, rgba(1, 7, 27, 0.671), #2a475e); */
-}
-
 .slideshow {
-    position: relative;
-    /* margin-left: auto;
-    margin-right: auto; */
-    /* overflow: hidden; */
-    /* width: 60%; */
-}
-
-.slideshow_items {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 button {
@@ -29,16 +14,16 @@ button {
 }
 
 .prev_button {
-    position: absolute;
-    left: -32px;
-    top: 140px;
+    top: 0;
+    left: 0;
+    bottom: 0;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
 }
 
 .next_button {
-    position: absolute;
-    right: -32px;
-    top: 140px;
+    top: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
 }
 
@@ -49,12 +34,5 @@ button {
     max-height: 800px;
     width: auto;
     height: auto;
-    /* margin-top: 50px; */
-}
-
-.gamedetail_prev_button {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
+    border-radius: 16px;
 }

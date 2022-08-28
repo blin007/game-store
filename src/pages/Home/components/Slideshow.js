@@ -82,70 +82,52 @@ function Slideshow({ featured, screenshots }) {
     // }, [index])
 
   return (
-    <div className="slideshow_container">
-        <div className="slideshow">
-            <div className="slideshow_items">
-                {featured ? (
-                    <>
-                    <GameCard 
-                        featured={true}
-                        animVariants = {variants}
-                        id = {images[index].id}
-                        image={images[index].url} 
-                        title= {images[index].title}
-                        price= {images[index].price}
-                        platforms={images[index].platforms}
-                        direction={direction}
-                    />
-                    <motion.button className="prev_button"
-                        onClick={e => moveSlide(-1)}
-                        whileHover={{background: "linear-gradient(to right, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
-                    >
-                        <NavigateBeforeIcon fontSize='large' className="arrow"/>
-                    </motion.button>
-                    <motion.button className="next_button"
-                        onClick={e => moveSlide(1)}
-                        whileHover={{background: "linear-gradient(to left, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
-                    >
-                        <NavigateNextIcon fontSize='large' className="arrow"/>
-                    </motion.button>
-                    </>
-                ) : (
-                    <>
-                        <AnimatePresence initial={false} mode="wait" custom={direction}>
-                            <motion.img 
-                                variants={variants}
-                                initial="hidden"
-                                animate="visible"
-                                exit="exitShow"
-                                key={screenshots[index]?.image}
-                                custom={direction}
+    <div className="slideshow">
+        <motion.button className="prev_button"
+            onClick={e => moveSlide(-1)}
+            whileHover={{background: "linear-gradient(to right, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
+        >
+            <NavigateBeforeIcon fontSize='large' className="arrow"/>
+        </motion.button>
+            {featured ? (
+                <>
+                <GameCard 
+                    featured={true}
+                    animVariants = {variants}
+                    id = {images[index].id}
+                    image={images[index].url} 
+                    title= {images[index].title}
+                    price= {images[index].price}
+                    platforms={images[index].platforms}
+                    direction={direction}
+                />
 
-                                src={screenshots[index]?.image}
-                                alt=""
-                                className="slide_image"
-                            />
-                        </AnimatePresence>
-                        <motion.button className="gamedetail_prev_button"
-                            onClick={e => moveSlide(-1)}
-                            whileHover={{background: "linear-gradient(to right, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
-                        >
-                            <NavigateBeforeIcon fontSize='large' className="arrow"/>
-                        </motion.button>
-                        <motion.button className="gamedetail_next_button"
-                            onClick={e => moveSlide(1)}
-                            whileHover={{background: "linear-gradient(to left, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
-                        >
-                            <NavigateNextIcon fontSize='large' className="arrow"/>
-                        </motion.button>
-                    </>
-                )}
+                </>
+            ) : (
+                <>
+                    <AnimatePresence initial={false} mode="wait" custom={direction}>
+                        <motion.img 
+                            variants={variants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exitShow"
+                            key={screenshots[index]?.image}
+                            custom={direction}
 
-            </div>
-
-        </div>
+                            src={screenshots[index]?.image}
+                            alt=""
+                            className="slide_image"
+                        />
+                    </AnimatePresence>
+                </>
+            )}
+        <motion.button className="next_button"
+            onClick={e => moveSlide(1)}
+            whileHover={{background: "linear-gradient(to left, rgba(255,255,255,0.3) , rgba(0,0,0,0))"}}
+        >
+            <NavigateNextIcon fontSize='large' className="arrow"/>
+        </motion.button>
     </div>
-
   )
 }
 
