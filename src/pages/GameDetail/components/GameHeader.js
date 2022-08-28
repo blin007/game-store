@@ -1,22 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../../../styles/Header.css'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { motion } from 'framer-motion'
 import { BsCartPlus, BsCartCheck } from "react-icons/bs";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../features/cart/cartSlice'
 
-function GameHeader({ showNavLink, title }) {
+function GameHeader({ showNavLink, game, price }) {
   const navigate = useNavigate()
+  const dispatch = useDispatch();
   const [added, setAdded] = useState(false);
+  const title = game?.name;
+  const gameId = game?.id;
+  const image = game?.background_image;
 
   const goBack=(e) => {
     e.preventDefault();
     navigate('/');
   }
 
-  const addCart = () => {
+    const addCart = () => {
+        setAdded(true);
+        dispatch(addToCart({gameId, title, price, image}))
+    }
 
-  }
+    useEffect(() => {
+        setTimeout(() => {
+            setAdded(false);
+        }, 500)
+    }, [added])
 
   return (
     <div className="game_header_container">
@@ -38,7 +51,7 @@ function GameHeader({ showNavLink, title }) {
         )}
       </nav>
       <div className="game_header_info">
-        <h4>$59.99</h4>
+        <h4>${price}</h4>
         <motion.div 
           className="game_cart"
           whileHover={{scale: 1.2, textShadow: "0px 0px 8px rgb(255,255,255)", cursor: 'pointer'}}

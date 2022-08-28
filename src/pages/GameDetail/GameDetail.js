@@ -5,17 +5,19 @@ import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion';
 import GameHeader from './components/GameHeader';
 import Slideshow from '../Home/components/Slideshow';
+import price from '../../utility/price';
 
 function GameDetail({ pageVariants }) {
   const params = useParams();
   const gameId = Number(params.gameId);
   const [game, setGame] = useState({});
   const [screenshots, setScreenshots] = useState({});
-
+  const [gamePrice, setGamePrice] = useState(0);
 
   const getStates = () => {
     console.log("GAME STATE: ", game);
     console.log("SCREEN SHOT STATE: ", screenshots)
+    console.log("GAME PRICE STATE: ", gamePrice);
   }   
 
   useEffect(() => {
@@ -23,24 +25,23 @@ function GameDetail({ pageVariants }) {
       const res = await axios ({
         method: "GET",
         url: `/game/?id=${gameId}`,
-      }).
-      // then (response => {
-      //     console.log("successful axios response: ", response);
-      // }).
-      
-      catch(error => console.log("ERROR: ", error))
+      })
+      .catch(error => console.log("ERROR: ", error))
 
       console.log("res game details: ", res.data.gameDetailsData);
       console.log("res game screen shots: ", res.data.gameScreenShotsData);
       const images = res.data.gameScreenShotsData.results;
       const gameDetails = res.data.gameDetailsData
+      const gPrice = price(gameDetails);
       // const gameDetailsImage = gameDetails?.background_image
       setGame(gameDetails)
       setScreenshots(images);
+      setGamePrice(gPrice);
       console.log('game: ', game);
       console.log('screen shots: ', screenshots);
+      console.log('game price: ', gamePrice)
     })();
-
+    // eslint-disable-next-line
   }, [gameId])
 
   return (
@@ -53,7 +54,7 @@ function GameDetail({ pageVariants }) {
     >
       {game ? (
         <div className="game_container">
-          <GameHeader showNavLink={true} title={game?.name}/>
+          <GameHeader showNavLink={true} game={game} price={gamePrice}/>
           <div className="game_content">
             {/* <button onClick={getStates}>TEST</button> */}
             <div className="game_slideshow">

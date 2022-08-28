@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import axios from '../../axios'
 import { useNavigate } from 'react-router-dom'
 import { db } from '../../db/firebase'
+import createUID from '../../utility/createGuestUID'
 
 function Checkout({ buttonVariants, pageVariants }) {
     const cart = useSelector((state) => state.cart)
@@ -18,6 +19,7 @@ function Checkout({ buttonVariants, pageVariants }) {
     const [processing, setProcessing] = useState("")
     const [successful, setSuccessful] = useState(false)
     const [error, setError] = useState(null)
+    const [submitError, setSubmitError] = useState(false);
     const [disabled, setDisabled] = useState(true)
     const [clientSecret, setClientSecret] = useState(true);
 
@@ -41,6 +43,9 @@ function Checkout({ buttonVariants, pageVariants }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setProcessing(true);
+        // if (user.email === null || user.uid === null){
+        //     user.uid = createUID()
+        // }
 
         await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -48,7 +53,9 @@ function Checkout({ buttonVariants, pageVariants }) {
             }
         }).then(({ paymentIntent }) => {
             //payment has succeeded so add the purchase to the firebase store db
-            db.collection('users').doc(user?.uid).collection('purchases').doc(paymentIntent.id).set({
+
+            console.log('user: ', user);
+            db.collection('users').doc(user.uid ? user.uid : createUID()).collection('purchases').doc(paymentIntent.id).set({
                 cart: cart,
                 amount: paymentIntent.amount,
                 created: paymentIntent.created,
@@ -60,8 +67,14 @@ function Checkout({ buttonVariants, pageVariants }) {
 
             dispatch(clearCart());
 
-            navigate('/purchases', { replace: true })
-        })
+            if (user.email === null || user.uid === null){
+                navigate('/purchases', { replace: true })
+            }
+            else {
+                navigate('/', {replace: true})
+            }
+            
+        }).catch(error => setSubmitError(true))
     }
 
     const handleChange = (e) => {
@@ -114,9 +127,9 @@ function Checkout({ buttonVariants, pageVariants }) {
                                 <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                             </motion.button>
                         </form>
-                        
                     </div>
                 </div>
+
             </div>
             <div className="checkout_content_right">
                 <div className="checkout_section">
@@ -137,6 +150,12 @@ function Checkout({ buttonVariants, pageVariants }) {
                         </div>
                     </div>
                 </div>
+                {submitError && (
+                    <p className="submission_error">Error has occurred on payment processing</p>
+                )}
+                {!user.email && (
+                    <p className="submission_error">Log in to see purchase history</p>
+                )}
             </div>
         </div>
     </motion.div>

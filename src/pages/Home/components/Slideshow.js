@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import '../../../styles/Slideshow.css'
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -55,8 +55,6 @@ function Slideshow({ featured, screenshots }) {
 
     const len = featured ? images.length : screenshots?.length;
 
-    // console.log("screenshots and index: ", screenshots, index);
-
     const moveSlide = (step) => {
         if (step > 0) setDirection(1)
         else setDirection(-1)
@@ -71,16 +69,6 @@ function Slideshow({ featured, screenshots }) {
         setIndex((index) => index + step)
     }
 
-    // const setIndexByTime = () => {
-    //     setTimeout(() => {
-    //         moveSlide(1);
-    //     }, 5000);
-    // }
-
-    // useEffect(() => {
-    //     setIndexByTime();
-    // }, [index])
-
   return (
     <div className="slideshow">
         <motion.button className="prev_button"
@@ -90,7 +78,6 @@ function Slideshow({ featured, screenshots }) {
             <NavigateBeforeIcon fontSize='large' className="arrow"/>
         </motion.button>
             {featured ? (
-                <>
                 <GameCard 
                     featured={true}
                     animVariants = {variants}
@@ -101,25 +88,21 @@ function Slideshow({ featured, screenshots }) {
                     platforms={images[index].platforms}
                     direction={direction}
                 />
-
-                </>
             ) : (
-                <>
-                    <AnimatePresence initial={false} mode="wait" custom={direction}>
-                        <motion.img 
-                            variants={variants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="exitShow"
-                            key={screenshots[index]?.image}
-                            custom={direction}
+                <AnimatePresence initial={false} mode="wait" custom={direction}>
+                    <motion.img 
+                        variants={variants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exitShow"
+                        key={screenshots[index]?.image}
+                        custom={direction}
 
-                            src={screenshots[index]?.image}
-                            alt=""
-                            className="slide_image"
-                        />
-                    </AnimatePresence>
-                </>
+                        src={screenshots[index]?.image}
+                        alt=""
+                        className="slide_image"
+                    />
+                </AnimatePresence>
             )}
         <motion.button className="next_button"
             onClick={e => moveSlide(1)}
