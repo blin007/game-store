@@ -14,11 +14,11 @@ function GameDetail({ pageVariants }) {
   const [screenshots, setScreenshots] = useState({});
   const [gamePrice, setGamePrice] = useState(0);
 
-  const getStates = () => {
-    console.log("GAME STATE: ", game);
-    console.log("SCREEN SHOT STATE: ", screenshots)
-    console.log("GAME PRICE STATE: ", gamePrice);
-  }   
+  // const getStates = () => {
+  //   console.log("GAME STATE: ", game);
+  //   console.log("SCREEN SHOT STATE: ", screenshots)
+  //   console.log("GAME PRICE STATE: ", gamePrice);
+  // }   
 
   useEffect(() => {
     (async () => {
