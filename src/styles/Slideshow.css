@@ -41,3 +41,13 @@ button {
     top: 140px;
     background: linear-gradient(to left, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
 }
+
+/* for non featured slide shows */
+.slide_image {
+    object-fit: cover;
+    max-width: 1000px;
+    max-height: 800px;
+    width: auto;
+    height: auto;
+    /* margin-top: 50px; */
+}

@@ -4,7 +4,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import GameCard from '../../../components/GameCard';
 import images from '../../../db/dummyData';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const variants = {
     hidden: direction => {
@@ -55,6 +55,8 @@ function Slideshow({ featured, screenshots }) {
 
     const len = featured ? images.length : screenshots?.length;
 
+    // console.log("screenshots and index: ", screenshots, index);
+
     const moveSlide = (e, step) => {
         if (step > 0) setDirection(1)
         else setDirection(-1)
@@ -85,10 +87,20 @@ function Slideshow({ featured, screenshots }) {
                         direction={direction}
                     />
                 ) : (
-                    <img 
-                        src={screenshots[index]}
-                        alt=""
-                    />
+                    <AnimatePresence initial={false} mode="wait" custom={direction}>
+                        <motion.img 
+                            variants={variants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exitShow"
+                            key={screenshots[index]?.image}
+                            custom={direction}
+
+                            src={screenshots[index]?.image}
+                            alt=""
+                            className="slide_image"
+                        />
+                    </AnimatePresence>
                 )}
 
             </div>

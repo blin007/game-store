@@ -6,18 +6,11 @@ import { motion } from 'framer-motion';
 import GameHeader from './components/GameHeader';
 import Slideshow from '../Home/components/Slideshow';
 
-function GameDetail() {
+function GameDetail({ pageVariants }) {
   const params = useParams();
   const gameId = Number(params.gameId);
-  const [game, setGame] = useState({
-    // id: 0,
-    // name: "",
-    // description: "",
-
-  });
-  const [screenshots, setScreenshots] = useState({
-    // results: []
-  });
+  const [game, setGame] = useState({});
+  const [screenshots, setScreenshots] = useState({});
 
 
   const getStates = () => {
@@ -39,10 +32,11 @@ function GameDetail() {
 
       console.log("res game details: ", res.data.gameDetailsData);
       console.log("res game screen shots: ", res.data.gameScreenShotsData);
-      // const images = res.data.gameScreenShotsData.results;
-      // const gameDetails = res.data.gameDetailsData
-      setGame(res.data.gameDetailsData)
-      setScreenshots(res.data.gameScreenShotsData.results);
+      const images = res.data.gameScreenShotsData.results;
+      const gameDetails = res.data.gameDetailsData
+      // const gameDetailsImage = gameDetails?.background_image
+      setGame(gameDetails)
+      setScreenshots(images);
       console.log('game: ', game);
       console.log('screen shots: ', screenshots);
     })();
@@ -50,13 +44,25 @@ function GameDetail() {
   }, [gameId])
 
   return (
-    <div className="game_detail">
-      <GameHeader showNavLink={true} title={game?.name}/>
+    <motion.div 
+      className="game_detail"
+      variants={pageVariants}
+      initial={pageVariants?.hidden}
+      animate={pageVariants?.visible}
+      exit={pageVariants?.exit}
+    >
+      
       <div className="game_container">
-        <button onClick={getStates}>TEST</button>
-        {/* <Slideshow featured = {false} screenshots={screenshots?.results}/> */}
+        <GameHeader showNavLink={true} title={game?.name}/>
+        <div className="game_left">
+          {/* <button onClick={getStates}>TEST</button> */}
+          <Slideshow featured = {false} screenshots={screenshots}/>
+        </div>
+        <div className="game_right">
+
+        </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -3,7 +3,8 @@
 }
 
 body {
-  background: radial-gradient(at top, rgb(44, 57, 100) 40%, #07263f);
+  background-color: #07263f;
+  /* background: radial-gradient(at top, rgb(44, 57, 100) 40%, #07263f); */
   /* background: linear-gradient(to top, rgb(1, 7, 27), #2a475e 20%); */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
