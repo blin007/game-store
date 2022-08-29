@@ -10,14 +10,14 @@ h3 {
 }
 
 .home {
-    height: 100vh; 
+    height: 93vh; 
     background: linear-gradient(to top, rgb(1, 7, 27), #2a475e 20%);
 }
 
 .home_navbar {
     display: block;
     position:relative;
-    width: 50%;
+    width: 45%;
     max-width: 900px;
     padding: 0 16px;
     margin: 0 auto;
@@ -79,6 +79,7 @@ h3 {
 }
 
 .home_content_container {
+    margin-top: 25px;
     padding: 20px 0 20px 0;
 }
 

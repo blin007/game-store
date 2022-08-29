@@ -3,6 +3,7 @@ import '../../styles/Home.css'
 import HomeNavbar from './components/HomeNavbar'
 import Slideshow from './components/Slideshow'
 import { motion } from 'framer-motion'
+import image from '../../assets/bg1.png'
 
 
 function Home({ pageVariants }) {
@@ -18,7 +19,7 @@ function Home({ pageVariants }) {
 
         <img 
             className="home_banner_top"
-            src="https://cdn.cloudflare.steamstatic.com/steam/clusters/frontpage/9aeb2c71424deef0062b0449/page_bg_english.jpg?t=1660348764"
+            src={image}
             alt=""
         />
         
