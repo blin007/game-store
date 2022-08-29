@@ -33,7 +33,7 @@ function HomeNavbar() {
             <div className="home_navbackground">
                 <div className="home_navContent">
                     <div className="tab" onClick={e => handleSubmit(e, 'featured')}>
-                        <span className="item">Featured</span>
+                        <span className="item">Recommended</span>
                     </div>
                     <div className="tab" onClick={e => handleSubmit(e, 'top')}>
                         <span className="item">Top Rated</span>

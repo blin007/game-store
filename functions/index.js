@@ -29,15 +29,22 @@ app.get('/list', async (req, res) => {
     const query = req.query.search;
     console.log("query: ", query)
 
+    if (query === 'featured'){
+         console.log('in featured')
+        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}`).then(response => {
+            res.json(response.data);
+        })       
+    }
+
     if(query === 'top'){
         console.log('in top')
-        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&ordering=rating-released`).then(response => {
+        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&ordering=-rating&ordering=-metacritic`).then(response => {
             res.json(response.data);
         })
     }
     else if(query === 'new'){
         console.log('in new')
-        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&ordering=released`).then(response => {
+        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&ordering=-released`).then(response => {
             res.json(response.data);
         })        
     }

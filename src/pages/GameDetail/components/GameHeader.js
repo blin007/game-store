@@ -7,18 +7,12 @@ import { BsCartPlus, BsCartCheck } from "react-icons/bs";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../features/cart/cartSlice'
 
-function GameHeader({ showNavLink, game, price, listTitle }) {
+function GameHeader({ showNavLink, game, price }) {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const [added, setAdded] = useState(false);
-  let title = '';
-  if (game !== null){
-    title = game?.name;
-  }
-  else if (listTitle !== null) {
-    title = listTitle;
-  }
-  
+
+  const title = game?.name;
   const gameId = game?.id;
   const image = game?.background_image;
 
@@ -53,9 +47,8 @@ function GameHeader({ showNavLink, game, price, listTitle }) {
             </motion.button>
           </div>
         )}
-        {title && (
-          <h2>{title}</h2>
-        )}
+        <h2>{title ? title : "Results"}</h2>
+
       </nav>
       {price && (
         <div className="game_header_info">

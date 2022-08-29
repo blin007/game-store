@@ -3,7 +3,7 @@ import '../../../styles/Slideshow.css'
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import GameCard from '../../../components/GameCard';
-import images from '../../../db/dummyData';
+import images from '../../../db/featuredGames';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const variants = {
@@ -49,7 +49,6 @@ const variants = {
 
 
 function Slideshow({ featured, screenshots }) {
-
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(0);
 

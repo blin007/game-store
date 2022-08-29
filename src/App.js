@@ -61,8 +61,6 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      // console.log("User: ", authUser.email);
-
       //user logs in
       if (authUser){
         dispatch(setUser({
