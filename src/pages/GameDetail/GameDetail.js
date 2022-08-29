@@ -67,7 +67,6 @@ function GameDetail({ pageVariants }) {
                   <p>No description available</p>
                 )}
               </div>
-
             </div>
           </div>
         </div>     

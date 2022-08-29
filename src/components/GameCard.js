@@ -10,8 +10,6 @@ import { useDispatch } from 'react-redux'
 import { addToCart } from '../features/cart/cartSlice'
 import { useNavigate } from 'react-router-dom'
 
-
-
 function GameCard({ featured, animVariants, id, image, title, price, platforms, direction }) {
     const [added, setAdded] = useState(false);
     const dispatch = useDispatch();
@@ -41,7 +39,7 @@ function GameCard({ featured, animVariants, id, image, title, price, platforms, 
                 <motion.div 
                     onClick={e => handleClick(e)}
                     className={featured ? "card" : "search_card"}
-                    whileHover={{cursor: 'pointer', boxShadow: "0 0 20px 0px rgb(1, 7, 27)"}}    
+                    whileHover={{cursor: 'pointer', boxShadow: "0 0 20px 0px rgb(1, 7, 27)", scale: 1.01}}    
                     variants={animVariants}
                     initial= {animVariants?.hidden}
                     animate= {animVariants?.visible}

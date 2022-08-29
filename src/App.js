@@ -98,6 +98,7 @@ function App() {
           <Route path="/purchases" element={[<Header />, <Purchases pageVariants={pageVariants}/>]} />
           <Route exact path="/gameList/:search" element={[<Header />, <GameList pageVariants={pageVariants}/>]} />
           <Route exact path="/game/:gameId" element={[<Header />, <GameDetail pageVariants={pageVariants}/>]}/>
+          <Route exact path="/list/:search" element={[<Header />, <GameList pageVariants={pageVariants}/>]} />
         </Routes>
       </AnimatePresence>
   );

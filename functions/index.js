@@ -19,10 +19,43 @@ app.get('/search', async (req, res) => {
     const slug = gameName.split(' ').join('-').toLowerCase();
     console.log('game query search received: ', slug);
 
-    axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&search=${slug}`).then(response => {
+    axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&search=${slug}&search_precise=true&ordering=rating-released`).then(response => {
         res.json(response.data);
     })
 })
+
+//get top rated games
+app.get('/list', async (req, res) => {
+    const query = req.query.search;
+    console.log("query: ", query)
+
+    if(query === 'top'){
+        console.log('in top')
+        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&ordering=rating-released`).then(response => {
+            res.json(response.data);
+        })
+    }
+    else if(query === 'new'){
+        console.log('in new')
+        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&ordering=released`).then(response => {
+            res.json(response.data);
+        })        
+    }
+    else if(query === 'singleplayer'){
+        console.log('in singleplayer')
+        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&tags=singleplayer`).then(response => {
+            res.json(response.data);
+        })        
+    }
+    else if(query === 'multiplayer'){
+        console.log('in multiplayer')
+        axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&tags=multiplayer`).then(response => {
+            res.json(response.data);
+        })        
+    }
+})
+
+//
 
 
 //get game details and screen shots

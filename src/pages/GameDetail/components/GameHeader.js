@@ -7,11 +7,18 @@ import { BsCartPlus, BsCartCheck } from "react-icons/bs";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../features/cart/cartSlice'
 
-function GameHeader({ showNavLink, game, price }) {
+function GameHeader({ showNavLink, game, price, listTitle }) {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const [added, setAdded] = useState(false);
-  const title = game?.name;
+  let title = '';
+  if (game !== null){
+    title = game?.name;
+  }
+  else if (listTitle !== null) {
+    title = listTitle;
+  }
+  
   const gameId = game?.id;
   const image = game?.background_image;
 
@@ -50,23 +57,26 @@ function GameHeader({ showNavLink, game, price }) {
           <h2>{title}</h2>
         )}
       </nav>
-      <div className="game_header_info">
-        <h4>${price}</h4>
-        <motion.div 
-          className="game_cart"
-          whileHover={{scale: 1.2, textShadow: "0px 0px 8px rgb(255,255,255)", cursor: 'pointer'}}
-          whileTap={{scale: 1}}
-          onClick={addCart}
-        >
-          <h3>Add to Cart</h3>
-          <button 
-              className="game_add_cart_button"
-          > 
-              {!added && <BsCartPlus size={20}/> }
-              {added && <BsCartCheck size={20} />}
-          </button>
-        </motion.div>
-      </div>
+      {price && (
+        <div className="game_header_info">
+          <h4>${price}</h4>
+          <motion.div 
+            className="game_cart"
+            whileHover={{scale: 1.2, textShadow: "0px 0px 8px rgb(255,255,255)", cursor: 'pointer'}}
+            whileTap={{scale: 1}}
+            onClick={addCart}
+          >
+            <h3>Add to Cart</h3>
+            <button 
+                className="game_add_cart_button"
+            > 
+                {!added && <BsCartPlus size={20}/> }
+                {added && <BsCartCheck size={20} />}
+            </button>
+          </motion.div>
+        </div>
+      )}
+
     </div>
 
   )
