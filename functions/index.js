@@ -35,8 +35,7 @@ app.get('/list', async (req, res) => {
             res.json(response.data);
         })       
     }
-
-    if(query === 'top'){
+    else if(query === 'top'){
         console.log('in top')
         axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWG_API_KEY}&ordering=-rating&ordering=-metacritic`).then(response => {
             res.json(response.data);
@@ -61,9 +60,6 @@ app.get('/list', async (req, res) => {
         })        
     }
 })
-
-//
-
 
 //get game details and screen shots
 app.get('/game', async (req, res) => {
@@ -99,15 +95,6 @@ app.post('/checkout/create', async (req, res) => {
     });
 })
 
-// console.log(process.env)
 
 exports.api = functions.https.onRequest(app)
 //end point: http://localhost:5001/game-store-589e9/us-central1/api
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });

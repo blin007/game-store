@@ -1,18 +1,18 @@
 //import icons
 import { FaWindows, FaApple, FaXbox, FaPlaystation } from 'react-icons/fa'
 import { TbDeviceNintendo } from 'react-icons/tb'
-import { BsCartPlus, BsCartCheck } from "react-icons/bs";
+// import { BsCartPlus, BsCartCheck } from "react-icons/bs";
 
 import React, { useEffect, useState } from 'react'
 import '../styles/GameCard.css'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useDispatch } from 'react-redux'
-import { addToCart } from '../features/cart/cartSlice'
+// import { useDispatch } from 'react-redux'
+// import { addToCart } from '../features/cart/cartSlice'
 import { useNavigate } from 'react-router-dom'
 
 function GameCard({ featured, animVariants, id, image, title, price, platforms, direction }) {
     const [added, setAdded] = useState(false);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleClick = (e) => {
@@ -20,10 +20,10 @@ function GameCard({ featured, animVariants, id, image, title, price, platforms, 
         navigate(`/game/${id}`)
     }
 
-    const addCart = () => {
-        setAdded(true);
-        dispatch(addToCart({id, title, price, image}))
-    }
+    // const addCart = () => {
+    //     setAdded(true);
+    //     dispatch(addToCart({id, title, price, image}))
+    // }
 
     useEffect(() => {
         setTimeout(() => {
@@ -56,7 +56,7 @@ function GameCard({ featured, animVariants, id, image, title, price, platforms, 
                     <div id="slide_info" className={featured ? "slide_info" : "search_info"}>
                         <span className={featured ? "game_title" : "card_title"}>{title}</span>
                         
-                        <motion.button 
+                        {/* <motion.button 
                             className="add_cart"
                             whileHover={{scale: 1.5, textShadow: "0px 0px 8px rgb(255,255,255)"}}
                             whileTap={{scale: 1}}
@@ -64,7 +64,7 @@ function GameCard({ featured, animVariants, id, image, title, price, platforms, 
                         > 
                             {!added && <BsCartPlus size={20}/> }
                             {added && <BsCartCheck size={20} />}
-                        </motion.button>
+                        </motion.button> */}
                         
                         <span>Available Now!</span>
                         <span>Top Seller!</span>
