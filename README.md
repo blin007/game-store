@@ -23,6 +23,12 @@ Users should be able to:
 - View their account's past purchases
 - Browse an extensive library of games powered by [RAWG API](https://rawg.io/apidocs)
 
+### What I learned
+
+- I learned how to implement StripeJS, React Redux, Firebase, and Framer Motion into a React project.
+- I learned how to use Firebase functions to create a Full-Stack application
+- As of now, I am satisfied with the results of the project, but looking ahead, I would like to implement a "Loading" component that is rendered whenever an axios request is made 
+
 ## Technologies 🖥️
 
 - ▶️ [ReactJS](https://reactjs.org/)
